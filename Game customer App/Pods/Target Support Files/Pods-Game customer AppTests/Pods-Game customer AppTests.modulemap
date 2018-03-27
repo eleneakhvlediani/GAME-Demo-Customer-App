@@ -1,0 +1,6 @@
+framework module Pods_Game_customer_AppTests {
+  umbrella header "Pods-Game customer AppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
