@@ -20,6 +20,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let username = UserDefaults.standard.string(forKey: UserDefaultsKeys.username.rawValue){
+            if let password = UserDefaults.standard.string(forKey: UserDefaultsKeys.password.rawValue){
+                NetworkManager.NetworkManagerSharedInstance.register(userName: username, pass: password, callback: { (result) in
+                    
+                    
+                })
+            }
+        }
+       
+       
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
