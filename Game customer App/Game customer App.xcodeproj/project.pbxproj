@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		069B711E9597247B124E00A1 /* Pods_Game_customer_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03210BE68B8BE36D50E5B2BF /* Pods_Game_customer_AppTests.framework */; };
 		57037600DC47FF6429F17192 /* Pods_Game_customer_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C277E75A1B42851244B438A3 /* Pods_Game_customer_AppUITests.framework */; };
+		B370EDB6206D98600078C388 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370EDB5206D98600078C388 /* Constants.swift */; };
+		B370EDB7206D9B540078C388 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3772C39206D9221005B7FFF /* Roboto-Light.ttf */; };
+		B370EDB8206D9B570078C388 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3772C38206D9221005B7FFF /* Roboto-Bold.ttf */; };
+		B370EDBA206D9D620078C388 /* GameWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370EDB9206D9D620078C388 /* GameWalletViewController.swift */; };
 		B3772BF5206ADC4D005B7FFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3772BF4206ADC4D005B7FFF /* AppDelegate.swift */; };
 		B3772BF7206ADC4D005B7FFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3772BF6206ADC4D005B7FFF /* ViewController.swift */; };
 		B3772BFA206ADC4D005B7FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3772BF8206ADC4D005B7FFF /* Main.storyboard */; };
@@ -64,6 +68,8 @@
 		45915ED811F440798C6E60D9 /* Pods_Game_customer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Game_customer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22C6CBFF86007507D89BA2E /* Pods-Game customer AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer AppTests/Pods-Game customer AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0A94A7EBF8B2099B8BFFB0B /* Pods-Game customer AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer AppUITests/Pods-Game customer AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B370EDB5206D98600078C388 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B370EDB9206D9D620078C388 /* GameWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWalletViewController.swift; sourceTree = "<group>"; };
 		B3772BF1206ADC4D005B7FFF /* Game customer App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game customer App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3772BF4206ADC4D005B7FFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3772BF6206ADC4D005B7FFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 		B3772C2A206ADCF9005B7FFF /* Checker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		B3772C2D206ADD59005B7FFF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B3772C36206AE1E1005B7FFF /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		B3772C38206D9221005B7FFF /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		B3772C39206D9221005B7FFF /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		C277E75A1B42851244B438A3 /* Pods_Game_customer_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Game_customer_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FB862812E162F6F208E935 /* Pods-Game customer App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer App/Pods-Game customer App.release.xcconfig"; sourceTree = "<group>"; };
 		F10FC10D206D6E1E0064BD39 /* Game customer App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Game customer App.entitlements"; sourceTree = "<group>"; };
@@ -169,7 +177,9 @@
 		B3772BF3206ADC4D005B7FFF /* Game customer App */ = {
 			isa = PBXGroup;
 			children = (
+				B370EDB5206D98600078C388 /* Constants.swift */,
 				F10FC10D206D6E1E0064BD39 /* Game customer App.entitlements */,
+				B3772C39206D9221005B7FFF /* Roboto-Light.ttf */,
 				B3772C2C206ADCFF005B7FFF /* Fonts */,
 				B3772C2A206ADCF9005B7FFF /* Checker.swift */,
 				B3772C2D206ADD59005B7FFF /* NetworkManager.swift */,
@@ -182,6 +192,7 @@
 				B3772C00206ADC4D005B7FFF /* Info.plist */,
 				F10FC10E206D6FF40064BD39 /* NFCReader.swift */,
 				F10FC110206D77410064BD39 /* SignInViewController.swift */,
+				B370EDB9206D9D620078C388 /* GameWalletViewController.swift */,
 			);
 			path = "Game customer App";
 			sourceTree = "<group>";
@@ -209,6 +220,7 @@
 			children = (
 				B3772C23206ADCEA005B7FFF /* Myriad Pro Regular.ttf */,
 				B3772C22206ADCEA005B7FFF /* MyriadPro-Bold.otf */,
+				B3772C38206D9221005B7FFF /* Roboto-Bold.ttf */,
 				B3772C24206ADCEA005B7FFF /* Oswald-Light.ttf */,
 				B3772C25206ADCEA005B7FFF /* Oswald-Regular.ttf */,
 			);
@@ -342,7 +354,9 @@
 				B3772C27206ADCEA005B7FFF /* Myriad Pro Regular.ttf in Resources */,
 				B3772C29206ADCEA005B7FFF /* Oswald-Regular.ttf in Resources */,
 				B3772C28206ADCEA005B7FFF /* Oswald-Light.ttf in Resources */,
+				B370EDB8206D9B570078C388 /* Roboto-Bold.ttf in Resources */,
 				B3772C26206ADCEA005B7FFF /* MyriadPro-Bold.otf in Resources */,
+				B370EDB7206D9B540078C388 /* Roboto-Light.ttf in Resources */,
 				B3772BFA206ADC4D005B7FFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B370EDBA206D9D620078C388 /* GameWalletViewController.swift in Sources */,
 				F10FC111206D77410064BD39 /* SignInViewController.swift in Sources */,
 				B3772C2E206ADD59005B7FFF /* NetworkManager.swift in Sources */,
 				B3772BF7206ADC4D005B7FFF /* ViewController.swift in Sources */,
@@ -513,6 +528,7 @@
 				B3772C2B206ADCF9005B7FFF /* Checker.swift in Sources */,
 				B3772C37206AE1E1005B7FFF /* Objects.swift in Sources */,
 				B3772BF5206ADC4D005B7FFF /* AppDelegate.swift in Sources */,
+				B370EDB6206D98600078C388 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

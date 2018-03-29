@@ -28,7 +28,10 @@ class SignInViewController: UIViewController {
                     
                     
                     DispatchQueue.main.async {
-                        //self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
+                        
+                        let vc = GameWalletViewController()
+                        vc.result = result
+                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                 }
                 
@@ -40,8 +43,12 @@ class SignInViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let placeHolderColor = UIColor(white: 1.0, alpha: 0.4)
+        let placeHolderFont = UIFont(name: Constants.robotoLight, size: 17)
+        userName.attributedPlaceholder = NSAttributedString(string: "Email",
+                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor,NSAttributedStringKey.font : placeHolderFont])
+        password.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor, NSAttributedStringKey.font : placeHolderFont])
     }
 
     override func didReceiveMemoryWarning() {

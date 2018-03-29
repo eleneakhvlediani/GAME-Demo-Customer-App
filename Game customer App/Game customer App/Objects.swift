@@ -186,6 +186,9 @@ class UserPayload: Mappable {
         user <-  map["user"]
         userhmac <-  map["userhmac"]
         status <-  map["status"]
+        pw <-  map["pw"]
+        tid <-  map["tid"]
+
 
     }
 }

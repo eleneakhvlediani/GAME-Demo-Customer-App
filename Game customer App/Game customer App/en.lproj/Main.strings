@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Scan NFC tag"; ObjectID = "0kw-3r-7y9"; */
+"0kw-3r-7y9.normalTitle" = "Scan NFC tag";
+
+/* Class = "UITextField"; placeholder = "PASSWORD"; ObjectID = "2TU-ff-A2K"; */
+"2TU-ff-A2K.placeholder" = "PASSWORD";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "7Te-jx-qnC"; */
+"7Te-jx-qnC.text" = "Name";
+
+/* Class = "UITextField"; placeholder = "EMAIL"; ObjectID = "MZU-bd-3hK"; */
+"MZU-bd-3hK.placeholder" = "EMAIL";
+
+/* Class = "UILabel"; text = "SIGN IN"; ObjectID = "VgF-ba-29f"; */
+"VgF-ba-29f.text" = "SIGN IN";
+
+/* Class = "UIButton"; normalTitle = "Go"; ObjectID = "VzE-qz-Oil"; */
+"VzE-qz-Oil.normalTitle" = "Go";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "XWf-yp-EOs"; */
+"XWf-yp-EOs.text" = "0";
+
+/* Class = "UILabel"; text = "Credit Balance: "; ObjectID = "gn7-Xp-FTd"; */
+"gn7-Xp-FTd.text" = "Credit Balance: ";
