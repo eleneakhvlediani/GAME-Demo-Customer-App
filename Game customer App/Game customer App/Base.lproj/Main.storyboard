@@ -122,7 +122,7 @@
         <!--Game Wallet View Controller-->
         <scene sceneID="osU-SC-Uk1">
             <objects>
-                <viewController id="bQ8-Js-lrC" customClass="GameWalletViewController" customModule="Game_customer_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameWalletViewController" id="bQ8-Js-lrC" customClass="GameWalletViewController" customModule="Game_customer_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fui-2n-ePG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,8 +226,8 @@
                     </view>
                     <connections>
                         <outlet property="balance" destination="XWf-yp-EOs" id="VAr-yK-sRx"/>
-                        <outlet property="id" destination="dvw-BE-FBg" id="zqp-aE-Swh"/>
-                        <outlet property="nameLabel" destination="7Te-jx-qnC" id="bby-cT-XGb"/>
+                        <outlet property="id" destination="dvw-BE-FBg" id="xBW-io-W0J"/>
+                        <outlet property="nameLabel" destination="7Te-jx-qnC" id="PGh-c6-gb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJF-Oa-3vr" userLabel="First Responder" sceneMemberID="firstResponder"/>

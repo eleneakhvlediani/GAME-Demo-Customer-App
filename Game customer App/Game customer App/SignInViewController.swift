@@ -29,8 +29,9 @@ class SignInViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         
-                        let vc = GameWalletViewController()
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameWalletViewController") as! GameWalletViewController
                         vc.result = result
+
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
                 }
