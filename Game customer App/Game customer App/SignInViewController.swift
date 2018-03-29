@@ -10,6 +10,34 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var userName: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
+   
+    
+    @IBAction func signInButtonClickAction(_ sender: UIButton) {
+        
+        if(userName.text?.isEmpty == false && password.text?.isEmpty == false){
+            NetworkManager.NetworkManagerSharedInstance.register(userName: userName.text ?? "", pass: password.text ?? "", callback: { (result) in
+                
+                if result?.status == ResponseStatus.success.rawValue {
+                    
+                    
+                    UserDefaults.standard.setValue(self.userName.text ?? "", forKey: UserDefaultsKeys.username.rawValue);
+                    UserDefaults.standard.setValue(self.password.text ?? "", forKey: UserDefaultsKeys.password.rawValue)
+                    
+                    
+                    DispatchQueue.main.async {
+                        //self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
+                    }
+                }
+                
+                
+            })
+            
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
