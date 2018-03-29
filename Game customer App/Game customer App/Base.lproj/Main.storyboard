@@ -6,9 +6,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Afx-Ix-skr">
@@ -34,18 +44,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUq-ZF-XWZ">
-                                <rect key="frame" x="128" y="255" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="startSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F1z-1w-bPM"/>
-                                </connections>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="OHq-nc-xE4">
+                                <rect key="frame" x="-0.5" y="32" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TU-ff-A2K">
+                                <rect key="frame" x="22" y="326" width="330" height="69.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2TU-ff-A2K" secondAttribute="height" multiplier="950:200" id="cTs-HC-5qe"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgF-ba-29f">
+                                <rect key="frame" x="152.5" y="207" width="69.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZU-bd-3hK">
+                                <rect key="frame" x="22.5" y="250.5" width="330" height="69.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MZU-bd-3hK" secondAttribute="height" multiplier="950:200" id="nqM-Vc-Kkl"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzE-qz-Oil">
+                                <rect key="frame" x="22" y="411.5" width="330" height="69.5"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YUq-ZF-XWZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Sec-ji-f5e"/>
-                            <constraint firstItem="YUq-ZF-XWZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nNr-yG-jFM"/>
+                            <constraint firstItem="OHq-nc-xE4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3wp-a7-VPi"/>
+                            <constraint firstItem="VzE-qz-Oil" firstAttribute="top" secondItem="2TU-ff-A2K" secondAttribute="bottom" constant="16" id="4JD-92-Qop"/>
+                            <constraint firstItem="VgF-ba-29f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="143" id="7jD-1F-RzE"/>
+                            <constraint firstItem="2TU-ff-A2K" firstAttribute="centerX" secondItem="MZU-bd-3hK" secondAttribute="centerX" id="8sv-1l-pHO"/>
+                            <constraint firstItem="VgF-ba-29f" firstAttribute="centerX" secondItem="OHq-nc-xE4" secondAttribute="centerX" id="AP2-1c-fRf"/>
+                            <constraint firstItem="OHq-nc-xE4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="EOr-JI-wkI"/>
+                            <constraint firstItem="VzE-qz-Oil" firstAttribute="height" secondItem="2TU-ff-A2K" secondAttribute="height" id="JIK-ia-UPF"/>
+                            <constraint firstItem="2TU-ff-A2K" firstAttribute="width" secondItem="2TU-ff-A2K" secondAttribute="height" multiplier="950:200" id="MOj-yo-oIX"/>
+                            <constraint firstItem="MZU-bd-3hK" firstAttribute="centerX" secondItem="VgF-ba-29f" secondAttribute="centerX" id="OBC-b7-J6z"/>
+                            <constraint firstItem="OHq-nc-xE4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PtX-OG-x06"/>
+                            <constraint firstItem="MZU-bd-3hK" firstAttribute="width" secondItem="OHq-nc-xE4" secondAttribute="width" multiplier="950:1080" id="SzE-63-eWj"/>
+                            <constraint firstItem="VzE-qz-Oil" firstAttribute="centerX" secondItem="2TU-ff-A2K" secondAttribute="centerX" id="VMO-4V-Adq"/>
+                            <constraint firstItem="2TU-ff-A2K" firstAttribute="top" secondItem="MZU-bd-3hK" secondAttribute="bottom" constant="6" id="ahG-eD-WAl"/>
+                            <constraint firstItem="VzE-qz-Oil" firstAttribute="width" secondItem="2TU-ff-A2K" secondAttribute="width" id="cdP-1X-nRd"/>
+                            <constraint firstItem="MZU-bd-3hK" firstAttribute="top" secondItem="VgF-ba-29f" secondAttribute="bottom" constant="20" id="fax-Aw-Mb7"/>
+                            <constraint firstItem="2TU-ff-A2K" firstAttribute="width" secondItem="MZU-bd-3hK" secondAttribute="width" id="kHP-4C-ZGL"/>
+                            <constraint firstItem="OHq-nc-xE4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="wwt-7X-D0v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -71,4 +126,7 @@
             <point key="canvasLocation" x="190" y="903"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1080" height="1920"/>
+    </resources>
 </document>
