@@ -15,6 +15,8 @@ class GameWalletViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balance: UILabel!
     
+    let nfcReader = NFCReader()
+    
     var result: RegistrationResult?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,9 @@ class GameWalletViewController: UIViewController {
     }
     
     @IBAction func scanNFC(_ sender: UIButton) {
+        
+        nfcReader.beginSession()
+        
     }
     
     
