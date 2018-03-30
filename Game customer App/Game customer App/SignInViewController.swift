@@ -46,10 +46,11 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         let placeHolderColor = UIColor(white: 1.0, alpha: 0.4)
         let placeHolderFont = UIFont(name: Constants.robotoLight, size: 17)
+        
         userName.attributedPlaceholder = NSAttributedString(string: "Email",
-                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor,NSAttributedStringKey.font : placeHolderFont])
+                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor,NSAttributedStringKey.font : placeHolderFont as Any])
         password.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor, NSAttributedStringKey.font : placeHolderFont])
+                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor, NSAttributedStringKey.font : placeHolderFont as Any])
     }
 
     override func didReceiveMemoryWarning() {

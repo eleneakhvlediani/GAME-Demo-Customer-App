@@ -37,7 +37,7 @@ class GameWalletViewController: UIViewController {
     
     @IBAction func scanNFC(_ sender: UIButton) {
         
-        nfcReader.beginSession()
+       // nfcReader.beginSession()
         
     }
     
