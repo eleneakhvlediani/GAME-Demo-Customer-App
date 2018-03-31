@@ -34,6 +34,7 @@
 		F1C651AC206EC9360056AFD9 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */; };
 		F1C651AE206ECCE90056AFD9 /* background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C651AD206ECCE90056AFD9 /* background@3x.png */; };
 		F1EFB4C1206F8C46008C0F4F /* StarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */; };
+		F1EFB4C3206FBC90008C0F4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFB4C2206FBC90008C0F4F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		F1C651AD206ECCE90056AFD9 /* background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@3x.png"; sourceTree = "<group>"; };
 		F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewController.swift; sourceTree = "<group>"; };
+		F1EFB4C2206FBC90008C0F4F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F35CA941FB1779A54AF3B774 /* Pods-Game customer AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer AppUITests/Pods-Game customer AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F8DD5219BAA92760E49F2860 /* Pods-Game customer App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer App/Pods-Game customer App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 				F10FC118206E89620064BD39 /* BaseViewController.swift */,
 				F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */,
 				F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */,
+				F1EFB4C2206FBC90008C0F4F /* Extensions.swift */,
 			);
 			path = "Game customer App";
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				F10FC10F206D6FF40064BD39 /* NFCReader.swift in Sources */,
 				F10FC119206E89620064BD39 /* BaseViewController.swift in Sources */,
 				B3772C2B206ADCF9005B7FFF /* Checker.swift in Sources */,
+				F1EFB4C3206FBC90008C0F4F /* Extensions.swift in Sources */,
 				B3772C37206AE1E1005B7FFF /* Objects.swift in Sources */,
 				B3772BF5206ADC4D005B7FFF /* AppDelegate.swift in Sources */,
 				F1EFB4C1206F8C46008C0F4F /* StarterViewController.swift in Sources */,

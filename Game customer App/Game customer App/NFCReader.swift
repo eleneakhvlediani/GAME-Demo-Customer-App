@@ -32,7 +32,7 @@ class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
 
 
     func beginSession() {
-        let session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
+        let session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
         session.begin()
     }
 

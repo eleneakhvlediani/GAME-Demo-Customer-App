@@ -57,7 +57,9 @@ class SignInViewController: BaseViewController {
         setShadow(hidden: true)
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        setShadow(hidden: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -44,7 +44,14 @@ class BaseViewController: UIViewController {
     
     func setShadow(hidden : Bool){
         
-       self.navigationController?.navigationBar.setBottomBorderColor(color: UIColor(red: 129/255, green: 129/255, blue: 129/255, alpha: 1), height: 1)
+        if(hidden == true){
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+        }else{
+           
+           self.navigationController?.navigationBar.shadowImage = UIImage.from(color: UIColor(red: 129/255, green: 129/255, blue: 129/255, alpha: 1))
+            
+        
+        }
         
         
     }
@@ -166,22 +173,4 @@ class BaseViewController: UIViewController {
 
 }
 
-extension NSObject {
-    public var className: String {
-        return String(describing: type(of: self))
-    }
-    
-    public class var className: String {
-        return String(describing: self)
-    }
-}
 
-extension UINavigationBar {
-    
-    func setBottomBorderColor(color: UIColor, height: CGFloat) {
-        let bottomBorderRect = CGRect(x: 0, y: frame.height, width: frame.width, height: height)
-        let bottomBorderView = UIView(frame: bottomBorderRect)
-        bottomBorderView.backgroundColor = color
-        addSubview(bottomBorderView)
-    }
-}

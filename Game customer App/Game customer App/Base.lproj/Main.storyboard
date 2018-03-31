@@ -117,7 +117,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" prompt="   " id="lJa-6V-1CR"/>
+                    <navigationItem key="navigationItem" id="lJa-6V-1CR"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="password" destination="2TU-ff-A2K" id="Gqg-vR-AEw"/>
@@ -276,13 +276,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOy-2b-Jru">
-                                        <rect key="frame" x="70" y="36" width="49" height="20"/>
+                                        <rect key="frame" x="69.5" y="36" width="49" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmx-4d-zXa">
-                                        <rect key="frame" x="255" y="36.5" width="53" height="20"/>
+                                        <rect key="frame" x="255.5" y="36.5" width="53" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -294,7 +294,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8q-Jz-EM5">
-                                        <rect key="frame" x="191.5" y="71" width="178.5" height="20"/>
+                                        <rect key="frame" x="193.5" y="71" width="176.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                         <color key="textColor" red="0.92156862750000001" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -338,14 +338,24 @@
                                     <action selector="opaqueButtonClickAction:" destination="xes-Wn-dlb" eventType="touchUpInside" id="9no-c3-BmE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-bg-NjN">
+                                <rect key="frame" x="129.5" y="296" width="115" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="overTouchIDButtonClickAction:" destination="xes-Wn-dlb" eventType="touchUpInside" id="c1k-hv-lwh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fw2-bg-NjN" firstAttribute="trailing" secondItem="FP3-WZ-vmg" secondAttribute="trailing" id="1Jp-71-WgA"/>
                             <constraint firstItem="HUe-sw-Oei" firstAttribute="centerX" secondItem="rL2-V9-wUP" secondAttribute="centerX" id="2EA-tj-Y5G"/>
                             <constraint firstItem="I6M-0C-tD9" firstAttribute="leading" secondItem="rL2-V9-wUP" secondAttribute="leading" id="2Ua-R7-AQV"/>
+                            <constraint firstItem="fw2-bg-NjN" firstAttribute="leading" secondItem="FP3-WZ-vmg" secondAttribute="leading" id="4uy-kc-Tlt"/>
                             <constraint firstItem="FP3-WZ-vmg" firstAttribute="centerX" secondItem="QEF-N9-fX1" secondAttribute="centerX" id="5h5-4J-kZd"/>
                             <constraint firstItem="QEF-N9-fX1" firstAttribute="top" secondItem="9K2-c2-PdL" secondAttribute="top" id="CUD-Fs-7Bk"/>
                             <constraint firstItem="hSI-WL-NFU" firstAttribute="centerY" secondItem="FP3-WZ-vmg" secondAttribute="centerY" id="KLC-hr-eJr"/>
+                            <constraint firstItem="fw2-bg-NjN" firstAttribute="bottom" secondItem="FP3-WZ-vmg" secondAttribute="bottom" id="N4t-8w-Ei5"/>
                             <constraint firstItem="I6M-0C-tD9" firstAttribute="width" secondItem="I6M-0C-tD9" secondAttribute="height" multiplier="1080:360" id="QM8-6b-nhI"/>
                             <constraint firstItem="vcN-93-QHN" firstAttribute="centerX" secondItem="QEF-N9-fX1" secondAttribute="centerX" id="UBI-Pp-Ge4"/>
                             <constraint firstItem="7S2-yr-MgH" firstAttribute="centerX" secondItem="HUe-sw-Oei" secondAttribute="centerX" id="YtA-Kk-7il"/>
@@ -356,6 +366,7 @@
                             <constraint firstItem="FP3-WZ-vmg" firstAttribute="centerY" secondItem="vcN-93-QHN" secondAttribute="bottom" constant="80" id="jKc-wv-9HH"/>
                             <constraint firstAttribute="trailing" secondItem="QEF-N9-fX1" secondAttribute="trailing" id="kmR-99-7vz"/>
                             <constraint firstItem="I6M-0C-tD9" firstAttribute="top" secondItem="rL2-V9-wUP" secondAttribute="top" id="mKU-GP-yCw"/>
+                            <constraint firstItem="fw2-bg-NjN" firstAttribute="top" secondItem="FP3-WZ-vmg" secondAttribute="top" id="mNy-j9-hoo"/>
                             <constraint firstItem="QEF-N9-fX1" firstAttribute="leading" secondItem="9K2-c2-PdL" secondAttribute="leading" id="okn-7E-BZb"/>
                             <constraint firstItem="HUe-sw-Oei" firstAttribute="width" secondItem="9K2-c2-PdL" secondAttribute="width" multiplier="950:1080" id="pwX-4r-DS2"/>
                             <constraint firstAttribute="bottom" secondItem="QEF-N9-fX1" secondAttribute="bottom" id="s42-0a-kkd"/>
@@ -372,6 +383,7 @@
                         <outlet property="creditsAmountLabel" destination="a8q-Jz-EM5" id="uWf-EO-DPo"/>
                         <outlet property="goodsAmountLabel" destination="7ck-JX-5da" id="P6L-va-0hw"/>
                         <outlet property="opaqueButton" destination="7S2-yr-MgH" id="6ts-SC-geb"/>
+                        <outlet property="overTouchIDButton" destination="fw2-bg-NjN" id="jm1-U2-bVR"/>
                         <outlet property="pinkButton" destination="HUe-sw-Oei" id="X8v-TI-DYc"/>
                         <outlet property="terminalLogo" destination="hSI-WL-NFU" id="wn6-f6-af3"/>
                         <outlet property="touchIDLogo" destination="FP3-WZ-vmg" id="uNb-vt-eyA"/>

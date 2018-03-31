@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class NFCReaderViewController: BaseViewController {
 
@@ -28,7 +29,12 @@ class NFCReaderViewController: BaseViewController {
     
     let nfcReader = NFCReader()
     
+    @IBOutlet weak var overTouchIDButton: UIButton!
     
+    @IBAction func overTouchIDButtonClickAction(_ sender: UIButton) {
+        
+        checkTouchID()
+    }
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
         
        nfcReader.beginSession()
@@ -59,7 +65,97 @@ class NFCReaderViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func checkTouchID() {
+        // 1. Create a authentication context
+        let authenticationContext = LAContext()
+        authenticationContext.localizedFallbackTitle = ""
+        var error:NSError?
+        
+        // 2. Check if the device has a fingerprint sensor
+        // If not, show the user an alert view and bail out!
+        guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            
+            showAlertViewIfNoBiometricSensorHasBeenDetected()
+            return
+            
+        }
+        
+        // 3. Check the fingerprint
+        
+        authenticationContext.evaluatePolicy(
+            .deviceOwnerAuthenticationWithBiometrics,
+            localizedReason: "Put finger on sensor to confirm purchase",
+            
+            reply: { [unowned self] (success, error) -> Void in
+                
+                if( success ) {
+                    //let tr = self.createTransactionStatus(st: .authorized)
+                    
+                    //self.setStatus(tr: tr)
+                    
+                    // Fingerprint recognized
+                    // Go to view controller
+                    
+                }else {
+                    
+                    // Check if there is an error
+                    if let error = error {
+                        
+                        //    let message = self.errorMessageForLAErrorCode(errorCode: (error as NSError).code)
+                        //
+                        if error.code == LAError.authenticationFailed.rawValue {
+//                            let tr = self.createTransactionStatus(st: .failed)
+                            
+                           // self.setStatus(tr: tr)
+                        }
+                        
+                    }
+                    
+                }
+                
+        })
+    }
 
+    func showAlertViewIfNoBiometricSensorHasBeenDetected(){
+        
+        showAlertWithTitle(title: "Error", message: "Activate TouchID sensor.", okAction: .doNothing)
+        
+    }
+    
+    func showAlertViewAfterEvaluatingPolicyWithMessage( message:String ){
+        
+        showAlertWithTitle(title: "Error", message: message)
+        
+    }
+    
+    func showAlertWithTitle( title:String, message:String, okAction:OkButtonActions = OkButtonActions.doNothing) {
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            if okAction == .doNothing {
+                
+            }else if okAction == .showFail {
+                
+                //self.showResultView(success: false)
+            }else if okAction == .returnToScanNFC{
+                
+                //self.updateScreenTo(touchID: false)
+                
+            }
+        }
+        alertVC.addAction(okAction)
+        
+        DispatchQueue.main.async() { () -> Void in
+            
+            self.present(alertVC, animated: true, completion: nil)
+            
+        }
+       
+    }
+    
+    
     /*
     // MARK: - Navigation
 
