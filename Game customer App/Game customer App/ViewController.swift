@@ -22,14 +22,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        if let username = UserDefaults.standard.string(forKey: UserDefaultsKeys.username.rawValue){
-            if let password = UserDefaults.standard.string(forKey: UserDefaultsKeys.password.rawValue){
-                NetworkManager.NetworkManagerSharedInstance.register(userName: username, pass: password, callback: { (result) in
-                    
-                    
-                })
-            }
-        }
+      
+        
        
        
         

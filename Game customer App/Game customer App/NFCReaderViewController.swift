@@ -9,7 +9,7 @@
 
 import UIKit
 
-class NFCReaderViewController: UIViewController {
+class NFCReaderViewController: BaseViewController {
 
     
     @IBOutlet weak var goodsAmountLabel: UILabel!
@@ -26,9 +26,13 @@ class NFCReaderViewController: UIViewController {
     
     @IBOutlet weak var opaqueButton: UIButton!
     
+    let nfcReader = NFCReader()
+    
+    
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
         
-        //self.navigationController?.popViewController(animated: true)
+       nfcReader.beginSession()
+        
     }
     
     @IBAction func opaqueButtonClickAction(_ sender: UIButton) {
@@ -42,6 +46,12 @@ class NFCReaderViewController: UIViewController {
         // Do any additional setup after loading the view.
         opaqueButton.layer.borderColor = UIColor(red: 234/256, green: 234/256, blue: 234/256, alpha: 1).cgColor
         opaqueButton.layer.borderWidth = 1
+        
+        setHeight()
+        setTitle(title: "NFC")
+        setBack(hidden: true)
+        setRightButton(hidden: false)
+        setShadow(hidden: false)
     }
 
     override func didReceiveMemoryWarning() {

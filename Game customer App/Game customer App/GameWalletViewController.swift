@@ -8,38 +8,38 @@
 
 import UIKit
 
-class GameWalletViewController: UIViewController {
+class GameWalletViewController: BaseViewController {
 
     
     @IBOutlet weak var id: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balance: UILabel!
     
-    let nfcReader = NFCReader()
     
     var result: RegistrationResult?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let firstName = result?.firstname, let lastName = result?.lastname {
               nameLabel.text = firstName + " " + lastName
         }
         id.text = result?.accountno
-        if let credit = result?.cretitbalance, let amount = result?.amountbalance {
-            balance.text = "\(credit) (£\(amount)"
+        if let credit = result?.creditbalance, let amount = result?.amountbalance {
+            balance.text = "\(credit) (£\(amount))"
         }
-            
+        
+        setHeight()
+        setTitle(title: "GAME WALLET")
+        setBack(hidden: true)
+        setRightButton(hidden: false)
+        setShadow(hidden: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func scanNFC(_ sender: UIButton) {
-        
-       // nfcReader.beginSession()
-        
-    }
+   
     
     
 

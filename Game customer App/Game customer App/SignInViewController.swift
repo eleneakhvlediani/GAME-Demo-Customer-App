@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: BaseViewController {
 
     @IBOutlet weak var userName: UITextField!
     
@@ -18,9 +18,10 @@ class SignInViewController: UIViewController {
     @IBAction func signInButtonClickAction(_ sender: UIButton) {
         
         if(userName.text?.isEmpty == false && password.text?.isEmpty == false){
+            
             NetworkManager.NetworkManagerSharedInstance.register(userName: userName.text ?? "", pass: password.text ?? "", callback: { (result) in
                 
-                if result?.status == ResponseStatus.success.rawValue {
+                if result != nil && result?.status == ResponseStatus.success.rawValue {
                     
                     
                     UserDefaults.standard.setValue(self.userName.text ?? "", forKey: UserDefaultsKeys.username.rawValue);
@@ -29,10 +30,7 @@ class SignInViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         
-                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameWalletViewController") as! GameWalletViewController
-                        vc.result = result
-
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        self.pushWallet(result: result!)
                     }
                 }
                 
@@ -51,8 +49,16 @@ class SignInViewController: UIViewController {
                                                             attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor,NSAttributedStringKey.font : placeHolderFont as Any])
         password.attributedPlaceholder = NSAttributedString(string: "Password",
                                                             attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor, NSAttributedStringKey.font : placeHolderFont as Any])
+        
+        showLogo()
+        setHeight()
+        setBack(hidden:true)
+        setRightButton(hidden: true)
+        setShadow(hidden: true)
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -11,6 +11,7 @@ import Foundation
 public class Constants {
    static var robotoLight = "Roboto-Light"
     
+    static var mainStoryboard = "Main"
 }
 
 

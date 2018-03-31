@@ -254,7 +254,7 @@ class TransactionResult: Result {
     var totalcredits: Int64?
     var totalamount: CGFloat?
     var currency: String?
-    var cretitbalance: Int64?
+    var creditbalance: Int64?
     var amountbalance: String?
     var requiredage: Int64?
     var userage: Int64?
@@ -272,7 +272,7 @@ class TransactionResult: Result {
         totalcredits <-  map["totalcredits"]
         totalamount <-  map["totalamount"]
         currency <-  map["currency"]
-        cretitbalance <-  map["cretitbalance"]
+        creditbalance <-  map["creditbalance"]
         amountbalance <-  map["amountbalance"]
         requiredage <-  map["requiredage"]
         userage <-  map["userage"]
@@ -289,8 +289,9 @@ class RegistrationResult : Result {
     var firstname: String?
     var lastname: String?
     var nickname: String?
-    var cretitbalance: String?
+    var creditbalance: Int64?
     var amountbalance: String?
+    
   
     required init?(map: Map) {
         super.init(map: map)
@@ -306,8 +307,9 @@ class RegistrationResult : Result {
         firstname <-  map["firstname"]
         lastname <-  map["lastname"]
         nickname <-  map["nickname"]
-        cretitbalance <-  map["cretitbalance"]
+        creditbalance <-  map["creditbalance"]
         amountbalance <-   map["amountbalance"]
+        
     }
 }
 

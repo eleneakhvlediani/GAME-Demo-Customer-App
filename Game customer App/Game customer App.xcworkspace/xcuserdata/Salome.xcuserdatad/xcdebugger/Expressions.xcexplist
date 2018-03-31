@@ -10,5 +10,16 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "GameWalletViewController.viewDidLoad():GameWalletViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result?.creditbalance">
+            </PersistentString>
+            <PersistentString
+               value = "result?.status">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
