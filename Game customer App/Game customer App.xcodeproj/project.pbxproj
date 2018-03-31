@@ -10,6 +10,7 @@
 		069B711E9597247B124E00A1 /* Pods_Game_customer_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03210BE68B8BE36D50E5B2BF /* Pods_Game_customer_AppTests.framework */; };
 		57037600DC47FF6429F17192 /* Pods_Game_customer_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C277E75A1B42851244B438A3 /* Pods_Game_customer_AppUITests.framework */; };
 		B3667227206FBECC00DBA973 /* NoInternet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3667225206FBECC00DBA973 /* NoInternet.xib */; };
+		B366722A206FC94D00DBA973 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3667229206FC94D00DBA973 /* ResultViewController.swift */; };
 		B370EDB6206D98600078C388 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370EDB5206D98600078C388 /* Constants.swift */; };
 		B370EDB7206D9B540078C388 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3772C39206D9221005B7FFF /* Roboto-Light.ttf */; };
 		B370EDB8206D9B570078C388 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3772C38206D9221005B7FFF /* Roboto-Bold.ttf */; };
@@ -75,6 +76,7 @@
 		A22C6CBFF86007507D89BA2E /* Pods-Game customer AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer AppTests/Pods-Game customer AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0A94A7EBF8B2099B8BFFB0B /* Pods-Game customer AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer AppUITests/Pods-Game customer AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3667225206FBECC00DBA973 /* NoInternet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternet.xib; sourceTree = "<group>"; };
+		B3667229206FC94D00DBA973 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B370EDB5206D98600078C388 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B370EDB9206D9D620078C388 /* GameWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWalletViewController.swift; sourceTree = "<group>"; };
 		B3772BF1206ADC4D005B7FFF /* Game customer App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game customer App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +109,6 @@
 		F10FC114206E2B6A0064BD39 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		F10FC115206E2B6B0064BD39 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		F10FC116206E2B6B0064BD39 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		F10FC117206E2B6B0064BD39 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../Downloads/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		F10FC118206E89620064BD39 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		F1C651AD206ECCE90056AFD9 /* background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@3x.png"; sourceTree = "<group>"; };
@@ -168,6 +169,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B3667228206FC91900DBA973 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3772BF6206ADC4D005B7FFF /* ViewController.swift */,
+				F10FC110206D77410064BD39 /* SignInViewController.swift */,
+				B370EDB9206D9D620078C388 /* GameWalletViewController.swift */,
+				F10FC118206E89620064BD39 /* BaseViewController.swift */,
+				F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */,
+				F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */,
+				B3667229206FC94D00DBA973 /* ResultViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B3772BE8206ADC4D005B7FFF = {
 			isa = PBXGroup;
 			children = (
@@ -196,11 +211,11 @@
 				B3667225206FBECC00DBA973 /* NoInternet.xib */,
 				B370EDB5206D98600078C388 /* Constants.swift */,
 				F10FC10D206D6E1E0064BD39 /* Game customer App.entitlements */,
+				B3667228206FC91900DBA973 /* ViewControllers */,
 				B3772C2C206ADCFF005B7FFF /* Fonts */,
 				B3772C2A206ADCF9005B7FFF /* Checker.swift */,
 				B3772C2D206ADD59005B7FFF /* NetworkManager.swift */,
 				B3772BF4206ADC4D005B7FFF /* AppDelegate.swift */,
-				B3772BF6206ADC4D005B7FFF /* ViewController.swift */,
 				B3772C36206AE1E1005B7FFF /* Objects.swift */,
 				B3772BF8206ADC4D005B7FFF /* Main.storyboard */,
 				B3772BFB206ADC4D005B7FFF /* Assets.xcassets */,
@@ -208,11 +223,6 @@
 				B3772BFD206ADC4D005B7FFF /* LaunchScreen.storyboard */,
 				B3772C00206ADC4D005B7FFF /* Info.plist */,
 				F10FC10E206D6FF40064BD39 /* NFCReader.swift */,
-				F10FC110206D77410064BD39 /* SignInViewController.swift */,
-				B370EDB9206D9D620078C388 /* GameWalletViewController.swift */,
-				F10FC118206E89620064BD39 /* BaseViewController.swift */,
-				F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */,
-				F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */,
 				F1EFB4C2206FBC90008C0F4F /* Extensions.swift */,
 			);
 			path = "Game customer App";
@@ -240,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				B3772C39206D9221005B7FFF /* Roboto-Light.ttf */,
-				F10FC117206E2B6B0064BD39 /* Roboto-Bold.ttf */,
 				F10FC114206E2B6A0064BD39 /* Roboto-Light.ttf */,
 				F10FC115206E2B6B0064BD39 /* Roboto-Medium.ttf */,
 				F10FC116206E2B6B0064BD39 /* Roboto-Regular.ttf */,
@@ -557,6 +566,7 @@
 				F10FC119206E89620064BD39 /* BaseViewController.swift in Sources */,
 				B3772C2B206ADCF9005B7FFF /* Checker.swift in Sources */,
 				F1EFB4C3206FBC90008C0F4F /* Extensions.swift in Sources */,
+				B366722A206FC94D00DBA973 /* ResultViewController.swift in Sources */,
 				B3772C37206AE1E1005B7FFF /* Objects.swift in Sources */,
 				B3772BF5206ADC4D005B7FFF /* AppDelegate.swift in Sources */,
 				F1EFB4C1206F8C46008C0F4F /* StarterViewController.swift in Sources */,
