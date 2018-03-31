@@ -37,8 +37,10 @@ class NFCReaderViewController: BaseViewController {
     }
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
         
-       nfcReader.beginSession()
-        
+        nfcReader.beginSession()
+        let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingViewController")
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(modalViewController, animated: true, completion: nil)
     }
     
     @IBAction func opaqueButtonClickAction(_ sender: UIButton) {

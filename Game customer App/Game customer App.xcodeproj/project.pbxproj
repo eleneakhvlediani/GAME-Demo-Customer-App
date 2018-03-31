@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		069B711E9597247B124E00A1 /* Pods_Game_customer_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03210BE68B8BE36D50E5B2BF /* Pods_Game_customer_AppTests.framework */; };
 		57037600DC47FF6429F17192 /* Pods_Game_customer_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C277E75A1B42851244B438A3 /* Pods_Game_customer_AppUITests.framework */; };
+		B333A22B206FEA0700BBFF8F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B333A22A206FEA0700BBFF8F /* LoadingViewController.swift */; };
 		B3667227206FBECC00DBA973 /* NoInternet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3667225206FBECC00DBA973 /* NoInternet.xib */; };
 		B366722A206FC94D00DBA973 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3667229206FC94D00DBA973 /* ResultViewController.swift */; };
 		B370EDB6206D98600078C388 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B370EDB5206D98600078C388 /* Constants.swift */; };
@@ -75,6 +76,7 @@
 		45915ED811F440798C6E60D9 /* Pods_Game_customer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Game_customer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22C6CBFF86007507D89BA2E /* Pods-Game customer AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer AppTests/Pods-Game customer AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0A94A7EBF8B2099B8BFFB0B /* Pods-Game customer AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game customer AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Game customer AppUITests/Pods-Game customer AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B333A22A206FEA0700BBFF8F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B3667225206FBECC00DBA973 /* NoInternet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoInternet.xib; sourceTree = "<group>"; };
 		B3667229206FC94D00DBA973 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B370EDB5206D98600078C388 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */,
 				F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */,
 				B3667229206FC94D00DBA973 /* ResultViewController.swift */,
+				B333A22A206FEA0700BBFF8F /* LoadingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 			files = (
 				B370EDBA206D9D620078C388 /* GameWalletViewController.swift in Sources */,
 				F10FC111206D77410064BD39 /* SignInViewController.swift in Sources */,
+				B333A22B206FEA0700BBFF8F /* LoadingViewController.swift in Sources */,
 				F1C651AC206EC9360056AFD9 /* NFCReaderViewController.swift in Sources */,
 				B3772C2E206ADD59005B7FFF /* NetworkManager.swift in Sources */,
 				B3772BF7206ADC4D005B7FFF /* ViewController.swift in Sources */,

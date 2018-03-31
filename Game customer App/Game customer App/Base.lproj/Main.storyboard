@@ -37,7 +37,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="rXC-09-kus" kind="relationship" relationship="rootViewController" id="768-k9-sH1"/>
+                        <segue destination="rXC-09-kus" kind="relationship" relationship="rootViewController" id="i94-2c-h3b"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApJ-Ab-nLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,6 +378,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rL2-V9-wUP"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vcH-a5-ySA"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="aboveLabel" destination="vcN-93-QHN" id="Q43-Z7-2DN"/>
@@ -572,6 +573,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dz6-sB-21p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1462" y="855"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="HrM-FX-sW0">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewController" id="QmL-Py-wwr" customClass="LoadingViewController" customModule="Game_customer_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="gVY-N6-wCY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omq-mt-YeU" userLabel="Processing View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-cH-3fY">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                        <color key="color" red="0.92156862745098034" green="0.0" blue="1" alpha="0.92000000000000004" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kf3-yO-agl" userLabel="Cancel">
+                                        <rect key="frame" x="22" y="479.5" width="330" height="69.5"/>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="kf3-yO-agl" secondAttribute="height" multiplier="950:200" id="KRF-5M-hnJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelClicked:" destination="QmL-Py-wwr" eventType="touchUpInside" id="134-Tw-oYI"/>
+                                            <action selector="pinkButtonClickAction:" destination="xes-Wn-dlb" eventType="touchUpInside" id="nrS-rX-mNA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqm-Ih-kQs">
+                                        <rect key="frame" x="146" y="272" width="83" height="20"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.039215686274509803" green="0.031372549019607843" blue="0.10588235294117647" alpha="0.92000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ab9-cH-3fY" firstAttribute="top" secondItem="Wqm-Ih-kQs" secondAttribute="bottom" constant="31" id="5PW-NS-zPh"/>
+                                    <constraint firstAttribute="bottom" secondItem="kf3-yO-agl" secondAttribute="bottom" constant="118" id="6Bs-6V-WDW"/>
+                                    <constraint firstItem="ab9-cH-3fY" firstAttribute="centerX" secondItem="Omq-mt-YeU" secondAttribute="centerX" id="Hvh-Rg-8Ty"/>
+                                    <constraint firstItem="ab9-cH-3fY" firstAttribute="centerY" secondItem="Omq-mt-YeU" secondAttribute="centerY" id="VXy-5O-Kjd"/>
+                                    <constraint firstItem="kf3-yO-agl" firstAttribute="centerX" secondItem="Omq-mt-YeU" secondAttribute="centerX" id="WYG-ht-cU3"/>
+                                    <constraint firstItem="Wqm-Ih-kQs" firstAttribute="centerX" secondItem="ab9-cH-3fY" secondAttribute="centerX" id="YQL-Oa-vKv"/>
+                                    <constraint firstItem="kf3-yO-agl" firstAttribute="width" secondItem="Omq-mt-YeU" secondAttribute="width" multiplier="950:1080" id="eH1-pI-McW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Omq-mt-YeU" firstAttribute="top" secondItem="gVY-N6-wCY" secondAttribute="top" id="8NW-zs-6nv"/>
+                            <constraint firstAttribute="trailing" secondItem="Omq-mt-YeU" secondAttribute="trailing" id="IAV-FG-SSQ"/>
+                            <constraint firstItem="Omq-mt-YeU" firstAttribute="leading" secondItem="gVY-N6-wCY" secondAttribute="leading" id="S3M-P5-myR"/>
+                            <constraint firstAttribute="bottom" secondItem="Omq-mt-YeU" secondAttribute="bottom" id="rJp-Rt-6n2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ohj-Qo-i4N"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nku-Bb-TKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2295" y="1005"/>
         </scene>
         <!--Starter View Controller-->
         <scene sceneID="Hel-95-buD">
