@@ -87,10 +87,13 @@ class BaseViewController: UIViewController {
         
     }
     @objc func logoutButtonClick(){
-        
-        //first show alert
-        logout()
+        DispatchQueue.main.async {
+            self.showAlertWithTwoButtons(title: "", message: "Are you sure you want to sign out?", okSelector: self.logout, secondSelector: nil )
+        }
+        //logout()
     }
+    
+    
     
     func logout(){
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.username.rawValue)
@@ -175,6 +178,37 @@ class BaseViewController: UIViewController {
 
             self.view.layoutIfNeeded()
         })
+    }
+    
+    func showAlertWithTwoButtons(title:String, message:String, okSelector: (() -> Void?)?,secondSelector:(() -> Void?)?){
+        showAlertWithTitle(title: title, message: message, okSelector: okSelector, secondSelector: secondSelector, oneButton: false)
+
+    }
+    
+    func showAlertWithOneButton(title:String, message:String, okSelector: (() -> Void?)?) {
+        showAlertWithTitle(title: title, message: message, okSelector: okSelector, secondSelector: nil)
+    }
+    
+    func showAlertWithTitle( title:String, message:String, okSelector: (() -> Void?)?, secondSelector:(() -> Void?)?, oneButton:Bool = true) {
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: oneButton ? "Ok" : "Yes"  , style: .default) { _ in
+           okSelector?()
+        }
+        alertVC.addAction(okAction)
+        if !oneButton {
+            let noAction = UIAlertAction(title: "No"  , style: .default) { _ in
+                secondSelector?()
+            }
+            alertVC.addAction(noAction)
+        }
+        
+        DispatchQueue.main.async() { () -> Void in
+            
+            self.present(alertVC, animated: true, completion: nil)
+            
+        }
     }
 
 

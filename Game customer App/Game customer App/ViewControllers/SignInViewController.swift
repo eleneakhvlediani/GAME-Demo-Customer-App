@@ -33,6 +33,10 @@ class SignInViewController: BaseViewController {
                         
                         self.pushWallet(result: result!)
                     }
+                }else if result != nil && result?.status != ResponseStatus.success.rawValue {
+                    DispatchQueue.main.async {
+                        self.showAlertWithOneButton(title: result?.status ?? "", message: result?.statusdesc ?? "", okSelector: nil )
+                    }
                 }
                 
                 
