@@ -340,7 +340,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-bg-NjN">
                                 <rect key="frame" x="129.5" y="296" width="115" height="115"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="overTouchIDButtonClickAction:" destination="xes-Wn-dlb" eventType="touchUpInside" id="c1k-hv-lwh"/>
                                 </connections>
