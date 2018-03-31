@@ -10,7 +10,7 @@
 import UIKit
 import LocalAuthentication
 
-class NFCReaderViewController: BaseViewController {
+class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
 
     
     @IBOutlet weak var goodsAmountLabel: UILabel!
@@ -35,12 +35,12 @@ class NFCReaderViewController: BaseViewController {
         
         checkTouchID()
     }
+    var loadingViewController: LoadingViewController?
+    
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
         
         nfcReader.beginSession()
-        let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingViewController")
-        modalViewController.modalPresentationStyle = .overCurrentContext
-        self.navigationController?.present(modalViewController, animated: true, completion: nil)
+       
     }
     
     @IBAction func opaqueButtonClickAction(_ sender: UIButton) {
@@ -48,9 +48,93 @@ class NFCReaderViewController: BaseViewController {
         
     }
     
+    func addLoadingView(){
+        loadingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController
+        loadingViewController?.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(loadingViewController!, animated: true, completion: nil)
+    }
+    @objc func removeLoadingView(){
+        loadingViewController?.dismiss(animated: true, completion: nil)
+        loadingViewController = nil
+    }
+    func getResult(result: String) {
+        addLoadingView()
+        let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: (#selector(removeLoadingView)), userInfo: nil, repeats: false)
+        NetworkManager.NetworkManagerSharedInstance.fetchData(tid: result) { data in
+            timer.invalidate()
+            
+            self.removeLoadingView()
+       
+            if data?.status == ResponseStatus.success.rawValue {
+               
+                self.updateInfoOnGoodsAndCredits(data: data!)
+            }else{
+                self.showAlertWithTitle(title: (data?.statusdesc)!, message:ResponseStatus.getErrorDesc(errorCode: (data?.status)!).rawValue, okAction: .returnToScanNFC)
+            }
+        }
+    }
+    func updateInfoOnGoodsAndCredits(data: TransactionResult) {
+        if data.category?.contains("topup") == true {
+            goodsAmountLabel.text = "Top up"
+            creditsAmountLabel.text  = data.totalcredits?.description
+        }else {
+            if data.category?.contains("game") == true {
+                creditsAmountLabel.text  = data.totalcredits?.description
+                if data.articles?.count == 1 {
+                    goodsAmountLabel.text = data.articles![0].name
+                }else{
+                    goodsAmountLabel.text = "Playtime"
+                }
+            }else if data.category?.contains("food") == true {
+                creditsAmountLabel.text  = data.totalcredits?.description
+                if data.articles?.count == 1 {
+                    goodsAmountLabel.text = data.articles![0].name
+                }else{
+                    goodsAmountLabel.text = "Food & Drinks"
+                }
+            }
+            
+            if data.totalcredits! > data.creditbalance! {
+                let text = "Sorry your credit balance is too low! Please top up your account!"
+                showAlertWithOneButton(title: "", message: text, okSelector: goBackToWallet)
+                return
+            }
+        }
+        self.updateScreenTo(touchID: true)
+
+    }
+    func goBackToWallet() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func updateScreenTo(touchID:Bool){
+        pinkButton.isEnabled = true
+        pinkButton.alpha = 1
+        
+        self.overTouchIDButton.isEnabled = touchID
+        
+        if touchID == true {
+            self.aboveLabel.text = "Confirm with TouchID"
+            self.touchIDLogo.isHidden = false
+            self.terminalLogo.isHidden = true
+            self.pinkButton.setTitle("Cancel", for: .normal)
+            
+        }else{
+            
+            self.touchIDLogo.isHidden = true
+            self.terminalLogo.isHidden = false
+            self.pinkButton.setTitle("Start Search", for: .normal)
+            creditsAmountLabel.text = "--"
+            creditsAmountLabel.text = "--"
+            self.aboveLabel.text = "Hold near terminal"
+            //self.currTransactionResult = nil
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nfcReader.nfcReaderDelegate = self
         // Do any additional setup after loading the view.
         opaqueButton.layer.borderColor = UIColor(red: 234/256, green: 234/256, blue: 234/256, alpha: 1).cgColor
         opaqueButton.layer.borderWidth = 1

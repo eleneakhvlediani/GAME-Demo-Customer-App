@@ -10,20 +10,28 @@ import CoreNFC
 
 import Foundation
 
-
+protocol NFCReaderDelegate {
+    func getResult(result: String)
+}
 class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
-
+    var nfcReaderDelegate: NFCReaderDelegate?
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        for message in messages {
-            for record in message.records {
-                print("New Record Found:")
-                print(record.identifier)
-                print(record.payload)
-                print(record.type)
-                print(record.typeNameFormat)
-            }
+        
+        var result = ""
+        for payload in messages[0].records {
+            result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8)! // 1
         }
+        nfcReaderDelegate?.getResult(result: result)
+//        for message in messages {
+//            for record in message.records {
+//                print("New Record Found:")
+//                print(record.identifier)
+//                print(record.payload)
+//                print(record.type)
+//                print(record.typeNameFormat)
+//            }
+//        }
     }
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         print("NFC NDEF Invalidated")
