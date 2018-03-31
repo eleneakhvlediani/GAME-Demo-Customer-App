@@ -15,6 +15,7 @@ class GameWalletViewController: BaseViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balance: UILabel!
     
+    @IBOutlet weak var scanNFCButton: UIButton!
     
     var result: RegistrationResult?
     
@@ -40,6 +41,11 @@ class GameWalletViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
    
+    
+    override func showNoInternetView(show: Bool) {
+        super.showNoInternetView(show: show)
+        scanNFCButton.isEnabled = !show
+    }
     
     
 

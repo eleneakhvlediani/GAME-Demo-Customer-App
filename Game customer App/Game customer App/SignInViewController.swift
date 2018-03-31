@@ -14,6 +14,7 @@ class SignInViewController: BaseViewController {
     
     @IBOutlet weak var password: UITextField!
    
+    @IBOutlet weak var signInButton: UIButton!
     
     @IBAction func signInButtonClickAction(_ sender: UIButton) {
         
@@ -65,16 +66,9 @@ class SignInViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func showNoInternetView(show: Bool) {
+        super.showNoInternetView(show: show)
+        signInButton.isEnabled = !show
     }
-    */
 
 }

@@ -121,6 +121,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="password" destination="2TU-ff-A2K" id="Gqg-vR-AEw"/>
+                        <outlet property="signInButton" destination="VzE-qz-Oil" id="SSK-1c-umm"/>
                         <outlet property="userName" destination="MZU-bd-3hK" id="va1-9R-b4U"/>
                     </connections>
                 </viewController>
@@ -237,6 +238,7 @@
                         <outlet property="balance" destination="XWf-yp-EOs" id="VAr-yK-sRx"/>
                         <outlet property="id" destination="dvw-BE-FBg" id="xBW-io-W0J"/>
                         <outlet property="nameLabel" destination="7Te-jx-qnC" id="PGh-c6-gb7"/>
+                        <outlet property="scanNFCButton" destination="0kw-3r-7y9" id="s2O-IN-u8z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJF-Oa-3vr" userLabel="First Responder" sceneMemberID="firstResponder"/>
