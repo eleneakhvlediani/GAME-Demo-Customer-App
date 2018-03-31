@@ -13,7 +13,7 @@ class BaseViewController: UIViewController {
 
     @IBOutlet weak var noInternetBottomConstraint: NSLayoutConstraint!
     lazy var  reachabilityManager = Alamofire.NetworkReachabilityManager()
-
+    var bottomConstraint: NSLayoutConstraint?
     
     lazy var titleLabel :UILabel = {
         let label = UILabel()
@@ -25,11 +25,26 @@ class BaseViewController: UIViewController {
         
     }()
     
+    var noInternetView:UIView?
+    func addNoInternetView(){
+        noInternetView =  Bundle.main.loadNibNamed("NoInternet", owner: nil, options: nil)![0] as? UIView
+        //noInternetView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 35)
+        self.view.addSubview(noInternetView!)
+        noInternetView?.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = NSLayoutConstraint(item: noInternetView!, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: noInternetView!, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 50)
+        self.bottomConstraint = bottomConstraint
+        let widthConstraint = NSLayoutConstraint(item: noInternetView!, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: noInternetView!, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 35)
+        view.addConstraints([horizontalConstraint, bottomConstraint, widthConstraint, heightConstraint])
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addNoInternetView()
+        listenForReachability()
         
-       // listenForReachability()
         // Do any additional setup after loading the view.
     }
 
@@ -150,26 +165,18 @@ class BaseViewController: UIViewController {
         
     }
     func showNoInternetView(show:Bool){
-        
-//        if show == true {
-//            self.noInternetBottomConstraint.constant = 0
-//        }else{
-//            self.noInternetBottomConstraint.constant = 50
-//        }
-//        UIView.animate(withDuration: Double(0.5), animations: {
-//
-//            self.view.layoutIfNeeded()
-//        })
-    }
-    /*
-    // MARK: - Navigation
+ 
+        if show == true {
+            self.bottomConstraint?.constant = 0
+        }else{
+            self.bottomConstraint?.constant = 50
+        }
+        UIView.animate(withDuration: Double(0.5), animations: {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            self.view.layoutIfNeeded()
+        })
     }
-    */
+
 
 }
 
