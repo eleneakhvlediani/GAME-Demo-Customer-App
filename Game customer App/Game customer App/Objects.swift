@@ -355,7 +355,7 @@ class getTransactionStatusResult : SetAuthStatusResult {
         totalcredits <-  map["totalcredits"]
         totalamount <-  map["totalamount"]
         currency <-  map["currency"]
-        cretitbalance <-  map["cretitbalance"]
+        cretitbalance <-  map["creditbalance"]
         amountbalance <-  map["amountbalance"]
         paystatus <-  map["paystatus"]
         reason <-  map["reason"]

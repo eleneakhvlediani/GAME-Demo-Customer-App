@@ -12,6 +12,7 @@ import Foundation
 
 protocol NFCReaderDelegate {
     func getResult(result: String)
+    func alert(title:String, message:String, okAction: OkButtonActions)
 }
 class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
     var nfcReaderDelegate: NFCReaderDelegate?
@@ -33,9 +34,24 @@ class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
 //            }
 //        }
     }
+    
+    
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         print("NFC NDEF Invalidated")
         print("\(error)")
+        
+        print("The session was invalidated: \(error.localizedDescription)")
+        
+        if error.code == 204 || error.code == 200 {
+            return
+        }
+        
+        NSLog("The session was invalidated: \(error.localizedDescription)")
+        
+        nfcReaderDelegate?.alert(title: "Could not connect", message: "Hold smartphone Near terminal and Try agan", okAction: .doNothing)
+        //self.showAlertWithTitle(title: "Could not connect", message: "Hold smartphone Near terminal and Try agan", okAction: .doNothing)
+        
+       
     }
 
 
@@ -43,5 +59,16 @@ class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
         let session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
         session.begin()
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
