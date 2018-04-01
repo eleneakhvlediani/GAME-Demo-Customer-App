@@ -189,7 +189,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                     let s = StatusToSet.authorized
                     NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { status in
                         if status?.status == "0000" {
-                            getTransactionStatus(id: status?.tid)
+                            self.getTransactionStatus(id: status?.tid)
                             self.addLoadingView()
                         } else{
                             self.showAlertWithTitle(title: (status?.statusdesc)!, message: SetStatusResponseCode.getErrorDesc(errorCode: (status?.status)!), okAction: OkButtonActions.showFail)
@@ -221,7 +221,10 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     
     func getTransactionStatus(id: String?){
         NetworkManager.NetworkManagerSharedInstance.getTransactionStatus(tid: id!) { result in
-            //if result?.status == "0000"
+            self.removeLoadingView()
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+            vc.result = result
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

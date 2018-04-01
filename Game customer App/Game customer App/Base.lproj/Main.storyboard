@@ -398,7 +398,7 @@
         <!--Result View Controller-->
         <scene sceneID="oKt-TE-chj">
             <objects>
-                <viewController id="fxn-4E-FeX" customClass="ResultViewController" customModule="Game_customer_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" id="fxn-4E-FeX" customClass="ResultViewController" customModule="Game_customer_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ZK-zp-pao">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -522,8 +522,10 @@
                     <connections>
                         <outlet property="backToWalletButton" destination="ggc-uU-Qik" id="zSM-Dz-0gT"/>
                         <outlet property="creditInfoView" destination="Mkw-9W-R78" id="Cha-e3-siC"/>
-                        <outlet property="newCreditBalance" destination="XXN-37-xQN" id="71T-lT-0Vl"/>
-                        <outlet property="newCreditsLabel" destination="14T-jm-MD2" id="cEW-wd-3Q6"/>
+                        <outlet property="newCreditBalance" destination="XXN-37-xQN" id="5CC-uG-8ka"/>
+                        <outlet property="newCreditBalanceTitle" destination="uYU-gp-Ns8" id="REe-2G-AHF"/>
+                        <outlet property="newCreditsLabel" destination="14T-jm-MD2" id="JgW-ef-KWR"/>
+                        <outlet property="newCreditsTitle" destination="gXP-in-TFO" id="jcq-O9-crx"/>
                         <outlet property="resultDescriptionLabel" destination="KHE-h8-26r" id="aF7-gZ-YKb"/>
                         <outlet property="resultImageView" destination="yIB-SF-Bij" id="S2V-js-ek2"/>
                         <outlet property="resultLabel" destination="nid-Bz-pJF" id="8Qg-J9-a29"/>

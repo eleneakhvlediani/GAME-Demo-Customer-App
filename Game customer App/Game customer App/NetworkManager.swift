@@ -118,7 +118,11 @@ class NetworkManager {
         sendRequest(json: r.toJSONString()) { (response) in
             if let json = response.result.value  as? NSDictionary{
                 let obj = Mapper<getTransactionStatusResult>().map(JSONObject: json)
-                callback(obj)
+                if obj?.status == "0000" || obj?.status == "0002" {
+                    callback(obj)
+                }else{
+                    self.getTransactionStatus(tid: tid, callback: callback)
+                }
             }
         }
     }
