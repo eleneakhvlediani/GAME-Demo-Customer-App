@@ -11,6 +11,7 @@ import UIKit
 import LocalAuthentication
 
 class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
+   
 
     
     @IBOutlet weak var goodsAmountLabel: UILabel!
@@ -38,9 +39,15 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     var loadingViewController: LoadingViewController?
     
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
-        
-        nfcReader.beginSession()
-       
+        if touchIDLogo.isHidden {
+            nfcReader.beginSession()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+            let s = StatusToSet.denied
+            NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { ststus in
+                
+            }
+        }
     }
     
     @IBAction func opaqueButtonClickAction(_ sender: UIButton) {
@@ -118,6 +125,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             self.touchIDLogo.isHidden = false
             self.terminalLogo.isHidden = true
             self.pinkButton.setTitle("Cancel", for: .normal)
+            self.opaqueButton.isHidden = true
             
         }else{
             
@@ -127,6 +135,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             creditsAmountLabel.text = "--"
             creditsAmountLabel.text = "--"
             self.aboveLabel.text = "Hold near terminal"
+            self.opaqueButton.isHidden = false
             //self.currTransactionResult = nil
         }
         
@@ -176,12 +185,17 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             reply: { [unowned self] (success, error) -> Void in
                 
                 if( success ) {
-                    //let tr = self.createTransactionStatus(st: .authorized)
                     
-                    //self.setStatus(tr: tr)
-                    
-                    // Fingerprint recognized
-                    // Go to view controller
+                    let s = StatusToSet.authorized
+                    NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { status in
+                        if status?.status == "0000" {
+                            getTransactionStatus(id: status?.tid)
+                            self.addLoadingView()
+                        } else{
+                            self.showAlertWithTitle(title: (status?.statusdesc)!, message: SetStatusResponseCode.getErrorDesc(errorCode: (status?.status)!), okAction: OkButtonActions.showFail)
+                        }
+                    }
+  
                     
                 }else {
                     
@@ -191,9 +205,10 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                         //    let message = self.errorMessageForLAErrorCode(errorCode: (error as NSError).code)
                         //
                         if error.code == LAError.authenticationFailed.rawValue {
-//                            let tr = self.createTransactionStatus(st: .failed)
-                            
-                           // self.setStatus(tr: tr)
+                            let s = StatusToSet.failed
+                            NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { status in
+                                
+                            }
                         }
                         
                     }
@@ -203,6 +218,14 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         })
     }
 
+    
+    func getTransactionStatus(id: String?){
+        NetworkManager.NetworkManagerSharedInstance.getTransactionStatus(tid: id!) { result in
+            //if result?.status == "0000"
+        }
+    }
+    
+    
     func showAlertViewIfNoBiometricSensorHasBeenDetected(){
         
         showAlertWithTitle(title: "Error", message: "Activate TouchID sensor.", okAction: .doNothing)
@@ -239,6 +262,9 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             
         }
        
+    }
+    func alert(title: String, message: String, okAction: OkButtonActions) {
+        showAlertWithTitle(title: title, message: message, okAction: okAction)
     }
     
     
