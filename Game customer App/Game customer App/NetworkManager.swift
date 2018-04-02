@@ -97,11 +97,12 @@ class NetworkManager {
         }
     }
     
-    func setAuthStatus(status: StatusToSet, callback:@escaping (SetAuthStatusResult?) -> ()){
+    func setAuthStatus(tid: String, status: StatusToSet, callback:@escaping (SetAuthStatusResult?) -> ()){
         let r = UserPayload(action: .setAuthStat)
         r.user = self.user
         r.userhmac = self.userHmac
         r.status = status.rawValue
+        r.tid = tid
         sendRequest(json: r.toJSONString()) { (response) in
             if let json = response.result.value  as? NSDictionary{
                 let obj = Mapper<SetAuthStatusResult>().map(JSONObject: json)

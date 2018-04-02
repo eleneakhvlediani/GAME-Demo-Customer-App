@@ -13,7 +13,7 @@ import LocalAuthentication
 class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
    
 
-    
+    var tid: String?
     @IBOutlet weak var goodsAmountLabel: UILabel!
     
     @IBOutlet weak var creditsAmountLabel: UILabel!
@@ -44,7 +44,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         } else {
            // addLoadingView()
             let s = StatusToSet.denied
-            NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { ststus in
+            NetworkManager.NetworkManagerSharedInstance.setAuthStatus(tid: tid!, status: s) { ststus in
                 
                 DispatchQueue.main.async {
                   //  self.removeLoadingView()
@@ -70,6 +70,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         loadingViewController = nil
     }
     func getResult(result: String) {
+        tid = result
         addLoadingView()
         let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: (#selector(removeLoadingView)), userInfo: nil, repeats: false)
         NetworkManager.NetworkManagerSharedInstance.fetchData(tid: result) { data in
@@ -196,7 +197,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                 if( success ) {
                     
                     let s = StatusToSet.authorized
-                    NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { status in
+                    NetworkManager.NetworkManagerSharedInstance.setAuthStatus(tid: self.tid!, status: s) { status in
                         
                         DispatchQueue.main.async {
                             if status?.status == ResponseStatus.success.rawValue {
@@ -218,7 +219,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                         //
                         if error.code == LAError.authenticationFailed.rawValue {
                             let s = StatusToSet.failed
-                            NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { status in
+                            NetworkManager.NetworkManagerSharedInstance.setAuthStatus(tid: self.tid!, status: s) { status in
                                 
                             }
                         }
