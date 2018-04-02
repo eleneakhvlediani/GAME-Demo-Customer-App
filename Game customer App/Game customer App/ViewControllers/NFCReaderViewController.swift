@@ -65,8 +65,8 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         loadingViewController?.modalPresentationStyle = .overCurrentContext
         self.navigationController?.present(loadingViewController!, animated: true, completion: nil)
     }
-    @objc func removeLoadingView(){
-        loadingViewController?.dismiss(animated: true, completion: nil)
+    @objc func removeLoadingView(block: ((Void) -> Void)?){
+        loadingViewController?.dismiss(animated: true, completion: block)
         loadingViewController = nil
     }
     func getResult(result: String) {
@@ -78,14 +78,16 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             
             
             DispatchQueue.main.async {
-                self.removeLoadingView()
+                self.removeLoadingView(block: {
+                    if data?.status == ResponseStatus.success.rawValue {
+                        
+                        self.updateInfoOnGoodsAndCredits(data: data!)
+                    }else{
+                        self.showAlertWithTitle(title: (data?.statusdesc)!, message:ResponseStatus.getErrorDesc(errorCode: (data?.status)!).rawValue, okAction: .returnToScanNFC)
+                    }
+                })
            
-                if data?.status == ResponseStatus.success.rawValue {
-                   
-                    self.updateInfoOnGoodsAndCredits(data: data!)
-                }else{
-                    self.showAlertWithTitle(title: (data?.statusdesc)!, message:ResponseStatus.getErrorDesc(errorCode: (data?.status)!).rawValue, okAction: .returnToScanNFC)
-                }
+                
                 
             }
         }
@@ -234,10 +236,15 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     
     func getTransactionStatus(id: String?){
         NetworkManager.NetworkManagerSharedInstance.getTransactionStatus(tid: id!) { result in
-            self.removeLoadingView()
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ResultViewController.className) as! ResultViewController
-            vc.result = result
-            self.navigationController?.pushViewController(vc, animated: true)
+            DispatchQueue.main.async {
+                self.removeLoadingView(block: {
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ResultViewController.className) as! ResultViewController
+                    vc.result = result
+                    self.navigationController?.pushViewController(vc, animated: true)
+                })
+            }
+            
+            
         }
     }
     
