@@ -18,7 +18,7 @@ class SignInViewController: BaseViewController {
     
     @IBAction func signInButtonClickAction(_ sender: UIButton) {
         
-        if(userName.text?.isEmpty == false && password.text?.isEmpty == false){
+        //if(userName.text?.isEmpty == false && password.text?.isEmpty == false){
             
             NetworkManager.NetworkManagerSharedInstance.register(userName: userName.text ?? "", pass: password.text ?? "", callback: { (result) in
                 
@@ -42,7 +42,7 @@ class SignInViewController: BaseViewController {
                 
             })
             
-        }
+    
         
     }
     override func viewDidLoad() {

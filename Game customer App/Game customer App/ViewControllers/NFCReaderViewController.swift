@@ -234,7 +234,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     func getTransactionStatus(id: String?){
         NetworkManager.NetworkManagerSharedInstance.getTransactionStatus(tid: id!) { result in
             self.removeLoadingView()
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ResultViewController.className) as! ResultViewController
             vc.result = result
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -279,7 +279,10 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
        
     }
     func alert(title: String, message: String, okAction: OkButtonActions) {
-        showAlertWithTitle(title: title, message: message, okAction: okAction)
+        DispatchQueue.main.async {
+            self.showAlertWithTitle(title: title, message: message, okAction: okAction)
+        }
+        
     }
     
     

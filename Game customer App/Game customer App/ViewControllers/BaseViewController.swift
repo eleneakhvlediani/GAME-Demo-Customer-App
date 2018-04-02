@@ -103,7 +103,14 @@ class BaseViewController: UIViewController {
         
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.password.rawValue)
         
-        pushLogin()
+        NetworkManager.NetworkManagerSharedInstance.unRegister { (result) in
+            DispatchQueue.main.async {
+                self.pushLogin()
+            }
+            
+        }
+        
+        
         
     }
     
