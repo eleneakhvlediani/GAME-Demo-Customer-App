@@ -340,7 +340,7 @@
                                     <action selector="opaqueButtonClickAction:" destination="xes-Wn-dlb" eventType="touchUpInside" id="9no-c3-BmE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-bg-NjN">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw2-bg-NjN">
                                 <rect key="frame" x="129.5" y="296" width="115" height="115"/>
                                 <connections>
                                     <action selector="overTouchIDButtonClickAction:" destination="xes-Wn-dlb" eventType="touchUpInside" id="c1k-hv-lwh"/>
@@ -603,7 +603,6 @@
                                         </state>
                                         <connections>
                                             <action selector="cancelClicked:" destination="QmL-Py-wwr" eventType="touchUpInside" id="134-Tw-oYI"/>
-                                            <action selector="pinkButtonClickAction:" destination="xes-Wn-dlb" eventType="touchUpInside" id="nrS-rX-mNA"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqm-Ih-kQs">

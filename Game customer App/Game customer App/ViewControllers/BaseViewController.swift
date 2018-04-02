@@ -87,6 +87,9 @@ class BaseViewController: UIViewController {
         
     }
     @objc func logoutButtonClick(){
+        if(isConnectedToNetwork == false){
+            return
+        }
         DispatchQueue.main.async {
             self.showAlertWithTwoButtons(title: "", message: "Are you sure you want to sign out?", okSelector: self.logout, secondSelector: nil )
         }

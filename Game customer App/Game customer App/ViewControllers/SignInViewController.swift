@@ -60,6 +60,16 @@ class SignInViewController: BaseViewController {
         setBack(hidden:true)
         setRightButton(hidden: true)
         setShadow(hidden: true)
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
+    
+    }
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        userName.resignFirstResponder()
+        password.resignFirstResponder()
     }
 
     override func viewWillAppear(_ animated: Bool) {

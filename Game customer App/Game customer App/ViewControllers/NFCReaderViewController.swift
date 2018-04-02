@@ -42,9 +42,14 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         if touchIDLogo.isHidden {
             nfcReader.beginSession()
         } else {
-            self.navigationController?.popViewController(animated: true)
+           // addLoadingView()
             let s = StatusToSet.denied
             NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { ststus in
+                
+                DispatchQueue.main.async {
+                  //  self.removeLoadingView()
+                    self.navigationController?.popViewController(animated: true)
+                }
                 
             }
         }
@@ -70,13 +75,17 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         NetworkManager.NetworkManagerSharedInstance.fetchData(tid: result) { data in
             timer.invalidate()
             
-            self.removeLoadingView()
-       
-            if data?.status == ResponseStatus.success.rawValue {
-               
-                self.updateInfoOnGoodsAndCredits(data: data!)
-            }else{
-                self.showAlertWithTitle(title: (data?.statusdesc)!, message:ResponseStatus.getErrorDesc(errorCode: (data?.status)!).rawValue, okAction: .returnToScanNFC)
+            
+            DispatchQueue.main.async {
+                self.removeLoadingView()
+           
+                if data?.status == ResponseStatus.success.rawValue {
+                   
+                    self.updateInfoOnGoodsAndCredits(data: data!)
+                }else{
+                    self.showAlertWithTitle(title: (data?.statusdesc)!, message:ResponseStatus.getErrorDesc(errorCode: (data?.status)!).rawValue, okAction: .returnToScanNFC)
+                }
+                
             }
         }
     }
@@ -188,11 +197,14 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                     
                     let s = StatusToSet.authorized
                     NetworkManager.NetworkManagerSharedInstance.setAuthStatus(status: s) { status in
-                        if status?.status == "0000" {
-                            self.getTransactionStatus(id: status?.tid)
-                            self.addLoadingView()
-                        } else{
-                            self.showAlertWithTitle(title: (status?.statusdesc)!, message: SetStatusResponseCode.getErrorDesc(errorCode: (status?.status)!), okAction: OkButtonActions.showFail)
+                        
+                        DispatchQueue.main.async {
+                            if status?.status == ResponseStatus.success.rawValue {
+                                self.getTransactionStatus(id: status?.tid)
+                                self.addLoadingView()
+                            } else{
+                                self.showAlertWithTitle(title: (status?.statusdesc)!, message: SetStatusResponseCode.getErrorDesc(errorCode: (status?.status)!), okAction: OkButtonActions.showFail)
+                            }
                         }
                     }
   
@@ -270,6 +282,17 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         showAlertWithTitle(title: title, message: message, okAction: okAction)
     }
     
+    
+    override func showNoInternetView(show: Bool) {
+        super.showNoInternetView(show: show)
+        pinkButton.isEnabled = !show
+        opaqueButton.isEnabled = !show
+        
+        
+        if(self.touchIDLogo.isHidden == false){
+            overTouchIDButton.isEnabled = !show
+        }
+    }
     
     /*
     // MARK: - Navigation
