@@ -21,14 +21,8 @@ class GameWalletViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let firstName = result?.firstname, let lastName = result?.lastname {
-              nameLabel.text = firstName + " " + lastName
-        }
-        id.text = result?.accountno
-        if let credit = result?.creditbalance, let amount = result?.amountbalance {
-            balance.text = "\(credit) (£\(amount))"
-        }
         
+        updateInfo()
         setHeight()
         setTitle(title: "GAME WALLET")
         setBack(hidden: true)
@@ -47,6 +41,24 @@ class GameWalletViewController: BaseViewController {
         scanNFCButton.isEnabled = !show
     }
     
+    func updateInfo(){
+        if let firstName = result?.firstname, let lastName = result?.lastname {
+            nameLabel.text = firstName + " " + lastName
+        }
+        id.text = result?.accountno
+        if let credit = result?.creditbalance, let amount = result?.amountbalance {
+            balance.text = "\(credit) (£\(amount))"
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NetworkManager.NetworkManagerSharedInstance.getUserInfo { res in
+            self.result = res
+            DispatchQueue.main.async {
+                self.updateInfo()
+            }
+        }
+    }
     
 
 }
