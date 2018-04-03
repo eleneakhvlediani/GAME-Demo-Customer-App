@@ -39,6 +39,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     var loadingViewController: LoadingViewController?
     
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
+        addLoadingView()
         if touchIDLogo.isHidden {
             nfcReader.beginSession()
         } else {
@@ -63,9 +64,10 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     func addLoadingView(){
         loadingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController
         loadingViewController?.modalPresentationStyle = .overCurrentContext
+        loadingViewController?.modalTransitionStyle = .crossDissolve
         self.navigationController?.present(loadingViewController!, animated: true, completion: nil)
     }
-    @objc func removeLoadingView(block: ((Void) -> Void)?){
+    @objc func removeLoadingView(block: (() -> Void)?){
         loadingViewController?.dismiss(animated: true, completion: block)
         loadingViewController = nil
     }
