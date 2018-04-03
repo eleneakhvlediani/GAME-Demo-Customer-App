@@ -44,7 +44,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         addNoInternetView()
         listenForReachability()
-        
+        (self.navigationController as? CustomNavigationViewController)?.navBar?.logoutButton.addTarget(self, action: #selector(logoutButtonClick), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
 
@@ -54,7 +54,9 @@ class BaseViewController: UIViewController {
     }
     
     func showLogo(){
-        self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "headerLogo"))
+        (self.navigationController as? CustomNavigationViewController)?.setTitle(title: nil)
+
+//        self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "headerLogo"))
     }
     
     func setShadow(hidden : Bool){
@@ -73,15 +75,15 @@ class BaseViewController: UIViewController {
  
     
     func setTitle(title:String){
-        titleLabel.text = title
-        self.navigationItem.titleView = titleLabel
+        (self.navigationController as? CustomNavigationViewController)?.setTitle(title: title)
+//        titleLabel.text = title
+//        self.navigationItem.titleView = titleLabel
         
     }
     
     func setRightButton(hidden:Bool){
-        if hidden == true {
-            self.navigationItem.rightBarButtonItem = nil
-        }else{
+        (self.navigationController as? CustomNavigationViewController)?.navBar?.logoutButton.isHidden = hidden
+        if hidden == false {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "logout"), style: .plain, target: self, action: #selector(BaseViewController.logoutButtonClick))
         }
         

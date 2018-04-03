@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavigationBarView" customModule="Game_customer_App" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomNavigationBar" customModule="Game_customer_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3H0-XU-Vu5">
+                    <rect key="frame" x="115.5" y="27" width="144" height="33"/>
+                </imageView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ9-qk-Nyd">
+                    <rect key="frame" x="163.5" y="32" width="47.5" height="23.5"/>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6y-NW-QyV">
+                    <rect key="frame" x="-0.5" y="86" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="oTF-v2-ytK"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEU-Ya-fi9">
+                    <rect key="frame" x="323" y="17" width="52" height="52"/>
+                    <inset key="contentEdgeInsets" minX="13" minY="13" maxX="13" maxY="13"/>
+                    <state key="normal" image="logout"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="t6y-NW-QyV" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="1en-eC-Hf9"/>
+                <constraint firstItem="3H0-XU-Vu5" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="4NJ-I6-Dye"/>
+                <constraint firstItem="IEU-Ya-fi9" firstAttribute="centerY" secondItem="DQ9-qk-Nyd" secondAttribute="centerY" id="Fd9-kw-5xh"/>
+                <constraint firstItem="DQ9-qk-Nyd" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="R4m-2s-toG"/>
+                <constraint firstItem="3H0-XU-Vu5" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="RrU-Jv-yFq"/>
+                <constraint firstItem="t6y-NW-QyV" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="XOr-cc-SoL"/>
+                <constraint firstItem="t6y-NW-QyV" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="bBe-v7-USZ"/>
+                <constraint firstItem="DQ9-qk-Nyd" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="cix-Ye-Xcz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IEU-Ya-fi9" secondAttribute="trailing" id="jfi-pj-Dcx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="line" destination="t6y-NW-QyV" id="3AV-1E-hQv"/>
+                <outlet property="logo" destination="3H0-XU-Vu5" id="eNx-Ak-6pc"/>
+                <outlet property="logoutButton" destination="IEU-Ya-fi9" id="D9y-Rr-lKG"/>
+                <outlet property="title" destination="DQ9-qk-Nyd" id="L1W-Em-UiW"/>
+            </connections>
+            <point key="canvasLocation" x="22.5" y="-577.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="headerLogo" width="144" height="33"/>
+        <image name="logout" width="26" height="26"/>
+    </resources>
+</document>
