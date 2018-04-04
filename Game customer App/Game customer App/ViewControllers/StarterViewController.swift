@@ -41,7 +41,7 @@ class StarterViewController: BaseViewController {
             
             if result != nil && result?.status == ResponseStatus.success.rawValue {
                 DispatchQueue.main.async {
-                    self.pushWallet(result: result!)
+                    self.pushWallet(result: result!, animated: false)
                 }
             }else{
                 self.pushLogin()

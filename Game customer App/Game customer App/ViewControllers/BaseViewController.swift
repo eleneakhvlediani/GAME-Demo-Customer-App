@@ -164,11 +164,11 @@ class BaseViewController: UIViewController {
         
     }
     
-    func pushWallet(result:RegistrationResult){
+    func pushWallet(result:RegistrationResult, animated:Bool){
         let vc = UIStoryboard(name: Constants.mainStoryboard, bundle: nil).instantiateViewController(withIdentifier: GameWalletViewController.className) as! GameWalletViewController
         vc.result = result
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: animated)
     }
     func setBack(hidden:Bool){
         if hidden == true {

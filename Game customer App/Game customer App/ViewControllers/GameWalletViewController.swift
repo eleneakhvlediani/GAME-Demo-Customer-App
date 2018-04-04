@@ -29,6 +29,7 @@ class GameWalletViewController: BaseViewController {
         setRightButton(hidden: false)
         setShadow(hidden: false)
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,6 +53,7 @@ class GameWalletViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setTitle(title: "GAME WALLET")
         NetworkManager.NetworkManagerSharedInstance.getUserInfo { res in
             self.result = res
             DispatchQueue.main.async {

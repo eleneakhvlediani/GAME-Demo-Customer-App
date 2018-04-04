@@ -31,7 +31,7 @@ class SignInViewController: BaseViewController {
                     
                     DispatchQueue.main.async {
                         
-                        self.pushWallet(result: result!)
+                        self.pushWallet(result: result!, animated:true)
                     }
                 }else if result != nil && result?.status != ResponseStatus.success.rawValue {
                     DispatchQueue.main.async {
@@ -73,6 +73,7 @@ class SignInViewController: BaseViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        
         setShadow(hidden: true)
     }
     

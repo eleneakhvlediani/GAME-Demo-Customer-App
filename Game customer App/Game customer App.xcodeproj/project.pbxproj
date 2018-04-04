@@ -34,6 +34,9 @@
 		F10FC10F206D6FF40064BD39 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FC10E206D6FF40064BD39 /* NFCReader.swift */; };
 		F10FC111206D77410064BD39 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FC110206D77410064BD39 /* SignInViewController.swift */; };
 		F10FC119206E89620064BD39 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10FC118206E89620064BD39 /* BaseViewController.swift */; };
+		F169F65B207549D80017D25A /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169F65A207549D80017D25A /* CustomNavigationViewController.swift */; };
+		F169F65D207549F70017D25A /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F169F65C207549F60017D25A /* CustomNavigationBar.xib */; };
+		F169F65F20754A5E0017D25A /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169F65E20754A5D0017D25A /* CustomNavigationBarView.swift */; };
 		F1C651AC206EC9360056AFD9 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */; };
 		F1C651AE206ECCE90056AFD9 /* background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1C651AD206ECCE90056AFD9 /* background@3x.png */; };
 		F1EFB4C1206F8C46008C0F4F /* StarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */; };
@@ -112,6 +115,9 @@
 		F10FC115206E2B6B0064BD39 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		F10FC116206E2B6B0064BD39 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F10FC118206E89620064BD39 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F169F65A207549D80017D25A /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
+		F169F65C207549F60017D25A /* CustomNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
+		F169F65E20754A5D0017D25A /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		F1C651AB206EC9360056AFD9 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		F1C651AD206ECCE90056AFD9 /* background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@3x.png"; sourceTree = "<group>"; };
 		F1EFB4C0206F8C46008C0F4F /* StarterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 		B3667228206FC91900DBA973 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F169F65A207549D80017D25A /* CustomNavigationViewController.swift */,
 				B3772BF6206ADC4D005B7FFF /* ViewController.swift */,
 				F10FC110206D77410064BD39 /* SignInViewController.swift */,
 				B370EDB9206D9D620078C388 /* GameWalletViewController.swift */,
@@ -211,6 +218,8 @@
 		B3772BF3206ADC4D005B7FFF /* Game customer App */ = {
 			isa = PBXGroup;
 			children = (
+				F169F65E20754A5D0017D25A /* CustomNavigationBarView.swift */,
+				F169F65C207549F60017D25A /* CustomNavigationBar.xib */,
 				B3667225206FBECC00DBA973 /* NoInternet.xib */,
 				B370EDB5206D98600078C388 /* Constants.swift */,
 				F10FC10D206D6E1E0064BD39 /* Game customer App.entitlements */,
@@ -387,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F169F65D207549F70017D25A /* CustomNavigationBar.xib in Resources */,
 				B3772BFF206ADC4D005B7FFF /* LaunchScreen.storyboard in Resources */,
 				B3772BFC206ADC4D005B7FFF /* Assets.xcassets in Resources */,
 				B3772C27206ADCEA005B7FFF /* Myriad Pro Regular.ttf in Resources */,
@@ -564,11 +574,13 @@
 				F10FC111206D77410064BD39 /* SignInViewController.swift in Sources */,
 				B333A22B206FEA0700BBFF8F /* LoadingViewController.swift in Sources */,
 				F1C651AC206EC9360056AFD9 /* NFCReaderViewController.swift in Sources */,
+				F169F65F20754A5E0017D25A /* CustomNavigationBarView.swift in Sources */,
 				B3772C2E206ADD59005B7FFF /* NetworkManager.swift in Sources */,
 				B3772BF7206ADC4D005B7FFF /* ViewController.swift in Sources */,
 				F10FC10F206D6FF40064BD39 /* NFCReader.swift in Sources */,
 				F10FC119206E89620064BD39 /* BaseViewController.swift in Sources */,
 				B3772C2B206ADCF9005B7FFF /* Checker.swift in Sources */,
+				F169F65B207549D80017D25A /* CustomNavigationViewController.swift in Sources */,
 				F1EFB4C3206FBC90008C0F4F /* Extensions.swift in Sources */,
 				B366722A206FC94D00DBA973 /* ResultViewController.swift in Sources */,
 				B3772C37206AE1E1005B7FFF /* Objects.swift in Sources */,

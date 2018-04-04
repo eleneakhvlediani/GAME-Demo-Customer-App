@@ -39,7 +39,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     var loadingViewController: LoadingViewController?
     
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
-        addLoadingView()
+      //  addLoadingView()
         if touchIDLogo.isHidden {
             nfcReader.beginSession()
         } else {
@@ -71,20 +71,24 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         loadingViewController?.dismiss(animated: true, completion: block)
         loadingViewController = nil
     }
+   
     func getResult(result: String) {
         tid = result
+        print("modis")
         addLoadingView()
         let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: (#selector(removeLoadingView)), userInfo: nil, repeats: false)
         NetworkManager.NetworkManagerSharedInstance.fetchData(tid: result) { data in
-            timer.invalidate()
+            
             
             
             DispatchQueue.main.async {
+                timer.invalidate()
                 self.removeLoadingView(block: {
                     if data?.status == ResponseStatus.success.rawValue {
-                        
+                        print("successssssssssssssssssssss")
                         self.updateInfoOnGoodsAndCredits(data: data!)
                     }else{
+                        print("failllllllllll")
                         self.showAlertWithTitle(title: (data?.statusdesc)!, message:ResponseStatus.getErrorDesc(errorCode: (data?.status)!).rawValue, okAction: .returnToScanNFC)
                     }
                 })
@@ -140,7 +144,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             self.terminalLogo.isHidden = true
             self.pinkButton.setTitle("Cancel", for: .normal)
             self.opaqueButton.isHidden = true
-            
+            checkTouchID()
         }else{
             
             self.touchIDLogo.isHidden = true
