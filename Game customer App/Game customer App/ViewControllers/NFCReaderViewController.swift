@@ -283,6 +283,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                 
             }
         }
+        okAction.setValue(Constants.pinkColor, forKey: "titleTextColor")
         alertVC.addAction(okAction)
         
         DispatchQueue.main.async() { () -> Void in

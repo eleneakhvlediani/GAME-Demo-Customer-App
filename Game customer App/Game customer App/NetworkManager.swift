@@ -45,8 +45,8 @@ class NetworkManager {
     
     func register(userName: String, pass: String, callback:@escaping (RegistrationResult?) -> ()){
         let r = UserPayload(action: .register)
-        r.user = "tengo@fabrika.ge"
-        r.pw = "game1234"
+        r.user = userName//"tengo@fabrika.ge"
+        r.pw = pass//"game1234"
         sendRequest(json: r.toJSONString()) { (response) in
             if let json = response.result.value  as? NSDictionary{
                 let obj = Mapper<RegistrationResult>().map(JSONObject: json)

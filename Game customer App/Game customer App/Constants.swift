@@ -7,11 +7,14 @@
 //
 
 import Foundation
-
+import UIKit
 public class Constants {
    static var robotoLight = "Roboto-Light"
     
     static var mainStoryboard = "Main"
+    static var pinkColor =  UIColor(red:235/255 , green: 0, blue: 1, alpha: 1)
+    static var grayColor =  UIColor(red:100/255 , green: 100/255, blue: 100/255, alpha: 1)
+    
 }
 
 

@@ -208,11 +208,17 @@ class BaseViewController: UIViewController {
         let okAction = UIAlertAction(title: oneButton ? "Ok" : "Yes"  , style: .default) { _ in
            okSelector?()
         }
+        
+        
+        okAction.setValue(Constants.pinkColor, forKey: "titleTextColor")
+       
         alertVC.addAction(okAction)
         if !oneButton {
             let noAction = UIAlertAction(title: "No"  , style: .default) { _ in
                 secondSelector?()
             }
+            noAction.setValue(Constants.grayColor, forKey: "titleTextColor")
+            
             alertVC.addAction(noAction)
         }
         

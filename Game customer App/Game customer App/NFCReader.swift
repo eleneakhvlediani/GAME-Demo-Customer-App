@@ -48,7 +48,7 @@ class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
         
         NSLog("The session was invalidated: \(error.localizedDescription)")
         
-        nfcReaderDelegate?.alert(title: "Could not connect", message: "Hold smartphone Near terminal and Try agan", okAction: .doNothing)
+        nfcReaderDelegate?.alert(title: "Could not connect", message: "Hold smartphone Near terminal and Try again", okAction: .doNothing)
         //self.showAlertWithTitle(title: "Could not connect", message: "Hold smartphone Near terminal and Try agan", okAction: .doNothing)
         
        
