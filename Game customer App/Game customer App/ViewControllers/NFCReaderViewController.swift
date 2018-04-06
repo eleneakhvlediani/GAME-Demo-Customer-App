@@ -11,8 +11,8 @@ import UIKit
 import LocalAuthentication
 
 class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
-   
-
+    
+    
     var tid: String?
     @IBOutlet weak var goodsAmountLabel: UILabel!
     
@@ -22,7 +22,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     
     @IBOutlet weak var terminalLogo: UIImageView!
     @IBOutlet weak var aboveLabel: UILabel!
-  
+    
     
     @IBOutlet weak var pinkButton: UIButton!
     
@@ -39,16 +39,16 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     var loadingViewController: LoadingViewController?
     
     @IBAction func pinkButtonClickAction(_ sender: UIButton) {
-      //  addLoadingView()
+        //  addLoadingView()
         if touchIDLogo.isHidden {
             nfcReader.beginSession()
         } else {
-           // addLoadingView()
+            // addLoadingView()
             let s = StatusToSet.denied
             NetworkManager.NetworkManagerSharedInstance.setAuthStatus(tid: tid!, status: s) { ststus in
                 
                 DispatchQueue.main.async {
-                  //  self.removeLoadingView()
+                    //  self.removeLoadingView()
                     self.navigationController?.popViewController(animated: true)
                 }
                 
@@ -75,28 +75,23 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         loadingViewController?.dismiss(animated: true, completion: block)
         loadingViewController = nil
     }
-   
+    
     func getResult(result: String) {
         tid = result
-        print("modis")
         addLoadingView()
         let timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: (#selector(removeLoadingView)), userInfo: nil, repeats: false)
         NetworkManager.NetworkManagerSharedInstance.fetchData(tid: result) { data in
-            
-            
             
             DispatchQueue.main.async {
                 timer.invalidate()
                 self.removeLoadingView(block: {
                     if data?.status == ResponseStatus.success.rawValue {
-                        print("successssssssssssssssssssss")
                         self.updateInfoOnGoodsAndCredits(data: data!)
                     }else{
-                        print("failllllllllll")
                         self.showAlertWithTitle(title: (data?.statusdesc)!, message:ResponseStatus.getErrorDesc(errorCode: (data?.status)!).rawValue, okAction: .returnToScanNFC)
                     }
                 })
-           
+                
                 
                 
             }
@@ -130,7 +125,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             }
         }
         self.updateScreenTo(touchID: true)
-
+        
     }
     func goBackToWallet() {
         self.navigationController?.popViewController(animated: true)
@@ -176,7 +171,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         setRightButton(hidden: false)
         setShadow(hidden: false)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -220,7 +215,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                             }
                         }
                     }
-  
+                    
                     
                 }else {
                     
@@ -229,9 +224,17 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                         
                         //    let message = self.errorMessageForLAErrorCode(errorCode: (error as NSError).code)
                         //
+                        print("error")
                         if error.code == LAError.authenticationFailed.rawValue {
                             let s = StatusToSet.failed
+                        
                             NetworkManager.NetworkManagerSharedInstance.setAuthStatus(tid: self.tid!, status: s) { status in
+                                
+                                
+                                DispatchQueue.main.async {
+                                    
+                                    self.pushResultView(result: nil)
+                                }
                                 
                             }
                         }
@@ -242,15 +245,13 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
                 
         })
     }
-
+    
     
     func getTransactionStatus(id: String?){
         NetworkManager.NetworkManagerSharedInstance.getTransactionStatus(tid: id!) { result in
             DispatchQueue.main.async {
                 self.removeLoadingView(block: {
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ResultViewController.className) as! ResultViewController
-                    vc.result = result
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.pushResultView(result: result!)
                 })
             }
             
@@ -258,6 +259,11 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
         }
     }
     
+    func pushResultView(result:getTransactionStatusResult?){
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ResultViewController.className) as! ResultViewController
+        vc.result = result
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func showAlertViewIfNoBiometricSensorHasBeenDetected(){
         
@@ -279,10 +285,10 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             if okAction == .doNothing {
                 
             }else if okAction == .showFail {
-                
+                print("show fail")
                 //self.showResultView(success: false)
             }else if okAction == .returnToScanNFC{
-                
+                print("update to nfc")
                 //self.updateScreenTo(touchID: false)
                 
             }
@@ -295,7 +301,7 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
             self.present(alertVC, animated: true, completion: nil)
             
         }
-       
+        
     }
     func alert(title: String, message: String, okAction: OkButtonActions) {
         DispatchQueue.main.async {
@@ -305,8 +311,8 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     }
     
     
-    override func showNoInternetView(show: Bool) {
-        super.showNoInternetView(show: show)
+    override func showNoInternetView(show: Bool, animated: Bool) {
+        super.showNoInternetView(show: show, animated: animated)
         pinkButton.isEnabled = !show
         opaqueButton.isEnabled = !show
         
@@ -317,13 +323,13 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

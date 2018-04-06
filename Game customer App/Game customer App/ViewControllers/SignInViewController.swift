@@ -91,9 +91,9 @@ class SignInViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func showNoInternetView(show: Bool) {
+    override func showNoInternetView(show: Bool, animated:Bool) {
         
-        super.showNoInternetView(show: show)
+        super.showNoInternetView(show: show, animated: animated)
         signInButton.isEnabled = !show
         userName.isEnabled = !show
         password.isEnabled = !show

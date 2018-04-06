@@ -37,8 +37,8 @@ class GameWalletViewController: BaseViewController {
     }
    
     
-    override func showNoInternetView(show: Bool) {
-        super.showNoInternetView(show: show)
+    override func showNoInternetView(show: Bool, animated: Bool) {
+        super.showNoInternetView(show: show, animated: animated)
         scanNFCButton.isEnabled = !show
     }
     

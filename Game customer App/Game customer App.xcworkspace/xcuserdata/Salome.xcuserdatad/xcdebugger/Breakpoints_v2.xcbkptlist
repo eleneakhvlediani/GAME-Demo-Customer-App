@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Headers/UINavigationController.h"
-            timestampString = "544653714.632714"
+            timestampString = "544729115.872525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Headers/UINavigationController.h"
-            timestampString = "544653714.6331739"
+            timestampString = "544729115.8728859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "8"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/NetworkManager.swift"
-            timestampString = "544563773.124949"
+            timestampString = "544727938.121698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/NFCReader.swift"
-            timestampString = "544653714.63362"
+            timestampString = "544720840.9492379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/NFCReader.swift"
-            timestampString = "544653714.633716"
+            timestampString = "544720840.949296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.633765"
+            timestampString = "544729115.873234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "removeLoadingView(block:)"
             landmarkType = "7">
             <Locations>
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/NFCReader.swift"
-            timestampString = "544653714.633808"
+            timestampString = "544720840.949417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.633846"
+            timestampString = "544729115.8735811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "getResult(result:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,27 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.63389"
+            timestampString = "544729115.873859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "getResult(result:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.633942"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "addLoadingView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.63399"
+            timestampString = "544729115.874133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -298,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.634045"
+            timestampString = "544729115.874409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "checkTouchID()"
             landmarkType = "7">
          </BreakpointContent>
@@ -313,56 +297,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.6340851"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "getTransactionStatus(id:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Game_customer_App.getTransactionStatusResult&gt;) -&gt; () in Game_customer_App.NFCReaderViewController.getTransactionStatus(id: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "Game customer App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Salome/GAME-Demo-Customer-App/Game%20customer%20App/Game%20customer%20App/ViewControllers/NFCReaderViewController.swift"
-                  timestampString = "544394048.694768"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Game_customer_App.getTransactionStatusResult&gt;) -&gt; () in Game_customer_App.NFCReaderViewController.getTransactionStatus(id: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "Game customer App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Salome/GAME-Demo-Customer-App/Game%20customer%20App/Game%20customer%20App/ViewControllers/NFCReaderViewController.swift"
-                  timestampString = "544394048.699368"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "476">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Game customer App/NetworkManager.swift"
-            timestampString = "544563773.127267"
+            timestampString = "544727938.123484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -410,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.634147"
+            timestampString = "544729115.8747081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "getResult(result:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.634186"
+            timestampString = "544729115.874953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "getResult(result:)"
             landmarkType = "7">
             <Locations>
@@ -474,13 +410,93 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
-            timestampString = "544653714.634222"
+            timestampString = "544729115.8751709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "getResult(result:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game customer App/ViewControllers/SignInViewController.swift"
+            timestampString = "544729115.875386"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "showNoInternetView(show:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game customer App/ViewControllers/GameWalletViewController.swift"
+            timestampString = "544729115.875429"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "updateInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game customer App/ViewControllers/NFCReaderViewController.swift"
+            timestampString = "544729648.15374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "pinkButtonClickAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_customer_App.NFCReaderViewController.pinkButtonClickAction(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Game customer App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Salome/GAME-Demo-Customer-App/Game%20customer%20App/Game%20customer%20App/ViewControllers/NFCReaderViewController.swift"
+                  timestampString = "544729648.789914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Game_customer_App.SetAuthStatusResult&gt;) -&gt; () in Game_customer_App.NFCReaderViewController.pinkButtonClickAction(__ObjC.UIButton) -&gt; ()"
+                  moduleName = "Game customer App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Salome/GAME-Demo-Customer-App/Game%20customer%20App/Game%20customer%20App/ViewControllers/NFCReaderViewController.swift"
+                  timestampString = "544729648.7933"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

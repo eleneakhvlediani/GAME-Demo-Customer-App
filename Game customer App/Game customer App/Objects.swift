@@ -348,6 +348,7 @@ class getTransactionStatusResult : SetAuthStatusResult {
     required init?(map: Map) {
         super.init(map: map)
     }
+   
     
     // Mappable
     override func mapping(map: Map) {

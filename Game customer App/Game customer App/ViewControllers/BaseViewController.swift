@@ -47,12 +47,10 @@ class BaseViewController: UIViewController {
         listenForReachability()
         (self.navigationController as? CustomNavigationViewController)?.navBar?.logoutButton.addTarget(self, action: #selector(logoutButtonClick), for: .touchUpInside)
         // Do any additional setup after loading the view.
-        
+        showNoInternetView(show: !isConnectedToNetwork, animated: false)
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        showNoInternetView(show: !isConnectedToNetwork)
-    }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,9 +120,7 @@ class BaseViewController: UIViewController {
         
     }
     
-    func showNoInternetView(){
-        
-    }
+    
     func setHeight(){
        // self.navigationItem.prompt = " "
         
@@ -145,14 +141,14 @@ class BaseViewController: UIViewController {
         reachabilityManager?.listener = { status in
             switch status {
             case .notReachable:
-                self.showNoInternetView(show: true)
+                self.showNoInternetView(show: true, animated: true)
 //                if self.spinner != nil {
 //                    UIViewController.removeSpinner(spinner: self.spinner!)
 //                }
                 
                 break
             case .unknown, .reachable(_):
-                self.showNoInternetView(show: false)
+                self.showNoInternetView(show: false, animated: true)
               
                 break
             }
@@ -187,17 +183,22 @@ class BaseViewController: UIViewController {
         }
         
     }
-    func showNoInternetView(show:Bool){
+    func showNoInternetView(show:Bool, animated:Bool){
  
         if show == true {
             self.bottomConstraint?.constant = 0
         }else{
             self.bottomConstraint?.constant = 50
         }
-        UIView.animate(withDuration: Double(0.5), animations: {
-
+        if animated {
+            UIView.animate(withDuration: Double(0.5), animations: {
+                
+                self.view.layoutIfNeeded()
+            })
+        }else{
             self.view.layoutIfNeeded()
-        })
+        }
+        
     }
     
     func showAlertWithTwoButtons(title:String, message:String, okSelector: (() -> Void?)?,secondSelector:(() -> Void?)?){
