@@ -37,6 +37,9 @@ class StarterViewController: BaseViewController {
             return
         }
         
+        if(isConnectedToNetwork == false){
+            self.pushLogin(userName: username, password: password)
+        }
         NetworkManager.NetworkManagerSharedInstance.register(userName: username, pass: password, callback: { (result) in
             
             if result != nil && result?.status == ResponseStatus.success.rawValue {

@@ -75,12 +75,12 @@ class ResultViewController: BaseViewController {
     }
     
     @IBAction func backToWalletClicked(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
         
        
         for controller in (self.navigationController?.viewControllers)! {
             if controller.isKind(of: GameWalletViewController.self){
-                self.navigationController?.popToViewController(controller, animated: false)
+                self.navigationController?.popToViewController(controller, animated: true)
                 break
             }
         }

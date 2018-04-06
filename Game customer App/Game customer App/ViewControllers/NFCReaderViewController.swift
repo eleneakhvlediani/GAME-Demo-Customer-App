@@ -62,9 +62,13 @@ class NFCReaderViewController: BaseViewController, NFCReaderDelegate {
     }
     
     func addLoadingView(){
-        loadingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingViewController") as? LoadingViewController
+        if navigationController?.viewControllers.last?.className == LoadingViewController.className {
+            return
+        }
+        loadingViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: LoadingViewController.className) as? LoadingViewController
         loadingViewController?.modalPresentationStyle = .overCurrentContext
         loadingViewController?.modalTransitionStyle = .crossDissolve
+        
         self.navigationController?.present(loadingViewController!, animated: true, completion: nil)
     }
     @objc func removeLoadingView(block: (() -> Void)?){

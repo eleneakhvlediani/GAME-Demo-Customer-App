@@ -327,7 +327,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="terminal" translatesAutoresizingMaskIntoConstraints="NO" id="hSI-WL-NFU">
-                                <rect key="frame" x="90" y="294" width="194" height="119"/>
+                                <rect key="frame" x="78" y="294" width="194" height="119"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S2-yr-MgH">
                                 <rect key="frame" x="22" y="557" width="330" height="69.5"/>
@@ -372,7 +372,7 @@
                             <constraint firstAttribute="bottom" secondItem="QEF-N9-fX1" secondAttribute="bottom" id="s42-0a-kkd"/>
                             <constraint firstItem="HUe-sw-Oei" firstAttribute="width" secondItem="HUe-sw-Oei" secondAttribute="height" multiplier="950:200" id="sn5-wd-mPf"/>
                             <constraint firstItem="7S2-yr-MgH" firstAttribute="top" secondItem="HUe-sw-Oei" secondAttribute="bottom" constant="8" id="wnV-5D-Fbl"/>
-                            <constraint firstItem="hSI-WL-NFU" firstAttribute="centerX" secondItem="FP3-WZ-vmg" secondAttribute="centerX" id="x7A-QA-wuD"/>
+                            <constraint firstItem="hSI-WL-NFU" firstAttribute="centerX" secondItem="FP3-WZ-vmg" secondAttribute="centerX" constant="-12" id="x7A-QA-wuD"/>
                             <constraint firstItem="FP3-WZ-vmg" firstAttribute="centerY" secondItem="QEF-N9-fX1" secondAttribute="centerY" constant="20" id="y8w-Uw-BNl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rL2-V9-wUP"/>

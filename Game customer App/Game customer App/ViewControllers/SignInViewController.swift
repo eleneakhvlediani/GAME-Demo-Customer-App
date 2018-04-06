@@ -9,41 +9,50 @@
 import UIKit
 
 class SignInViewController: BaseViewController {
-
+    
     @IBOutlet weak var userName: UITextField!
     
     @IBOutlet weak var password: UITextField!
-   
+    
     @IBOutlet weak var signInButton: UIButton!
     
+    var passedUsername:String?
+    var passedPassword:String?
     @IBAction func signInButtonClickAction(_ sender: UIButton) {
         
-        //if(userName.text?.isEmpty == false && password.text?.isEmpty == false){
-            
-            NetworkManager.NetworkManagerSharedInstance.register(userName: userName.text ?? "", pass: password.text ?? "", callback: { (result) in
-                
-                if result != nil && result?.status == ResponseStatus.success.rawValue {
-                    
-                    
-                    UserDefaults.standard.setValue(self.userName.text ?? "", forKey: UserDefaultsKeys.username.rawValue);
-                    UserDefaults.standard.setValue(self.password.text ?? "", forKey: UserDefaultsKeys.password.rawValue)
-                    
-                    
-                    DispatchQueue.main.async {
-                        
-                        self.pushWallet(result: result!, animated:true)
-                    }
-                }else if result != nil && result?.status != ResponseStatus.success.rawValue {
-                    DispatchQueue.main.async {
-                        self.showAlertWithOneButton(title: result?.status ?? "", message: result?.statusdesc ?? "", okSelector: nil )
-                    }
-                }
-                
-                
-            })
-            
-    
         
+        if passedUsername?.isEmpty == false && passedPassword?.isEmpty == false{
+            
+            register(username: passedUsername ?? "", password: passedPassword ?? "")
+        }else{
+            
+            register(username: userName.text ?? "", password: password.text ?? "")
+        }
+        
+    }
+    
+    func register(username:String, password:String){
+        
+        NetworkManager.NetworkManagerSharedInstance.register(userName: username, pass: password, callback: { (result) in
+            
+            if result != nil && result?.status == ResponseStatus.success.rawValue {
+                
+                
+                UserDefaults.standard.setValue(username, forKey: UserDefaultsKeys.username.rawValue);
+                UserDefaults.standard.setValue(password, forKey: UserDefaultsKeys.password.rawValue)
+                
+                
+                DispatchQueue.main.async {
+                    
+                    self.pushWallet(result: result!, animated:true)
+                }
+            }else if result != nil && result?.status != ResponseStatus.success.rawValue {
+                DispatchQueue.main.async {
+                    self.showAlertWithOneButton(title: result?.status ?? "", message: result?.statusdesc ?? "", okSelector: nil )
+                }
+            }
+        })
+    
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,13 +74,14 @@ class SignInViewController: BaseViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
         
-    
+//        super.reac
+        
     }
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         userName.resignFirstResponder()
         password.resignFirstResponder()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         
         setShadow(hidden: true)
@@ -82,8 +92,17 @@ class SignInViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     override func showNoInternetView(show: Bool) {
+        
         super.showNoInternetView(show: show)
         signInButton.isEnabled = !show
+        userName.isEnabled = !show
+        password.isEnabled = !show
+        
+        if passedPassword?.isEmpty == false && passedUsername?.isEmpty == false && show == false{
+            signInButtonClickAction(UIButton())
+            passedPassword = ""
+            passedUsername = ""
+        }
     }
-
+    
 }

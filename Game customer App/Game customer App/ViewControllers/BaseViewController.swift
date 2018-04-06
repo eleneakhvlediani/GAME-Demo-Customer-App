@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var noInternetBottomConstraint: NSLayoutConstraint!
     lazy var  reachabilityManager = Alamofire.NetworkReachabilityManager()
     var bottomConstraint: NSLayoutConstraint?
+    var alertVC:UIAlertController?
     
     lazy var titleLabel :UILabel = {
         let label = UILabel()
@@ -46,6 +47,11 @@ class BaseViewController: UIViewController {
         listenForReachability()
         (self.navigationController as? CustomNavigationViewController)?.navBar?.logoutButton.addTarget(self, action: #selector(logoutButtonClick), for: .touchUpInside)
         // Do any additional setup after loading the view.
+        
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        showNoInternetView(show: !isConnectedToNetwork)
     }
 
     override func didReceiveMemoryWarning() {
@@ -155,8 +161,10 @@ class BaseViewController: UIViewController {
     }
     
     
-    func pushLogin(){
+    func pushLogin(userName:String = "", password:String = ""){
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: SignInViewController.className) as! SignInViewController
+        vc.passedUsername = userName
+        vc.passedPassword = password
         
         self.navigationController?.pushViewController(vc, animated: false)
         
@@ -222,9 +230,16 @@ class BaseViewController: UIViewController {
             alertVC.addAction(noAction)
         }
         
+        
+        
         DispatchQueue.main.async() { () -> Void in
             
-            self.present(alertVC, animated: true, completion: nil)
+            if self.presentedViewController == nil {
+                
+
+                self.view.window?.rootViewController?.present(alertVC, animated: true, completion: nil)
+//                self.present(alertVC, animated: true, completion: nil)
+            }
             
         }
     }
